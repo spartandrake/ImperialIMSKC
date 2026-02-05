@@ -1,10 +1,14 @@
-﻿namespace ImperialIMS.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace ImperialIMS.Models
 {
     public class ItemCategory : EntityBase
     {
-        public Item item { get; set; }
-        public int itemId { get; set; }
-        public Category category { get; set; }
-        public int categoryId { get; set; }
+        public Item Item { get; set; }
+        [ForeignKey("Item")]
+        public int ItemId { get; set; }
+        public Category Category { get; set; }
+        [ForeignKey("Category")]
+        public int CategoryId { get; set; }
     }
 }
