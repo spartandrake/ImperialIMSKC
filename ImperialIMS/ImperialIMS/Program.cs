@@ -1,8 +1,28 @@
 using ImperialIMS.Data;
+using ImperialIMS.Models;
+using ImperialIMS.Repos;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Hosting;
+using Serilog;
+using Serilog.Events;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Environment.ApplicationName = "ImperialIMS";
+
+string logPath = builder.Environment.ContentRootPath + "/IMSLogging";
+
+builder.Host.UseSerilog((context, services, configuration) => configuration
+    .ReadFrom.Configuration(context.Configuration)
+    .ReadFrom.Services(services)
+    .Enrich.FromLogContext()
+    .WriteTo.Async(a => a.Console())
+    .WriteTo.Async(a => a.SQLite( //<-- New section
+    sqliteDbPath: logPath + @"-logs.db",
+    restrictedToMinimumLevel: LogEventLevel.Information,
+    storeTimestampInUtc: true
+)));
 
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
@@ -10,9 +30,21 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlite(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = !builder.Environment.IsDevelopment())
     .AddEntityFrameworkStores<ApplicationDbContext>();
+
+//Needed for layout testing
+builder.Services.AddHttpContextAccessor();
+
 builder.Services.AddRazorPages();
+builder.Services.AddScoped<IRepo<Alert>, AlertRepo>();
+builder.Services.AddScoped<IRepo<Category>, CategoryRepo>();
+builder.Services.AddScoped<IRepo<InventoryItem>, InventoryItemRepo>();
+builder.Services.AddScoped<IRepo<Item>, ItemRepo>();
+builder.Services.AddScoped<IRepo<ItemCategory>, ItemCategoryRepo>();
+builder.Services.AddScoped<IRepo<Manifest>, ManifestRepo>();
+builder.Services.AddScoped<IRepo<Shipment>, ShipmentRepo>();
+builder.Services.AddScoped<IRepo<StorageFacility>, StorageFacilityRepo>();
 
 var app = builder.Build();
 

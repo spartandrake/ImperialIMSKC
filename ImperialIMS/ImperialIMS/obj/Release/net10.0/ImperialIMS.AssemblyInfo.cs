@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap5")]
 [assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("aspnet-ImperialIMS-5cb2107b-1bb4-4971-b09a-6e7ca48c4a66")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("ImperialIMS")]
-[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0a4848f33d36d7d856a78ca54fd5632dbf18cdb7")]
 [assembly: System.Reflection.AssemblyProductAttribute("ImperialIMS")]
