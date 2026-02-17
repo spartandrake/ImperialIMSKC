@@ -1,9 +1,12 @@
-﻿using ImperialIMS.Repos;
+﻿using ImperialIMS.Models;
+using ImperialIMS.Repos;
 
 namespace ImperialIMS.Services
 {
-    public class ServiceBase<T>
+    public abstract class ServiceBase<T> : IDisposable, IService<T> where T : EntityBase, new()
     {
+        private bool disposedValue;
+
         private IRepo<T> _repo { get; set; }
         private IConfiguration _configuration { get; set; }
         private ILogger<T> _logger { get; set; }
@@ -33,7 +36,7 @@ namespace ImperialIMS.Services
             try
             {
                 _values.Clear();
-                _value.AddRange(_repo.Search(x => !x.IsDeleted));
+                _values.AddRange(_repo.Search(x => !x.IsDeleted));
                 _repo.SaveChanges();
             }
             catch (Exception ex)
@@ -42,27 +45,12 @@ namespace ImperialIMS.Services
             }
             return _values;
         }
-        public List<T> GetForUser(string ApplicationUserId)
-        {
-            try
-            {
-                _values.Clear();
-                _values.AddRange(_repo.Search(x => x.ApplicationUserId == ApplicationUserId && !x.IsDeleted)
-                .Include(x => x.ApplicationUser));
-                _repo.SaveChanges();
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError("Error getting Objects with ApplicationUserId of {Id}. " + ex.Message, ApplicationUserId);
-            }
-            return _values;
-        }
         public List<T> GetRecycleBin()
         {
             try
             {
                 _values.Clear();
-                _discussionThreads.AddRange(_repo.Search(x => x.IsDeleted).Include(x => x.ApplicationUser));
+                _values.AddRange(_repo.Search(x => x.IsDeleted));
                 _repo.SaveChanges();
             }
             catch (Exception ex)
@@ -135,6 +123,35 @@ namespace ImperialIMS.Services
             {
                 _logger.LogError("Error undeleting value with Id {Id}. " + ex.Message, value.Id);
             }
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!disposedValue)
+            {
+                if (disposing)
+                {
+                    // TODO: dispose managed state (managed objects)
+                }
+
+                // TODO: free unmanaged resources (unmanaged objects) and override finalizer
+                // TODO: set large fields to null
+                disposedValue = true;
+            }
+        }
+
+        // // TODO: override finalizer only if 'Dispose(bool disposing)' has code to free unmanaged resources
+        // ~ServiceBase()
+        // {
+        //     // Do not change this code. Put cleanup code in 'Dispose(bool disposing)' method
+        //     Dispose(disposing: false);
+        // }
+
+        public void Dispose()
+        {
+            // Do not change this code. Put cleanup code in 'Dispose(bool disposing)' method
+            Dispose(disposing: true);
+            GC.SuppressFinalize(this);
         }
     }
 }
