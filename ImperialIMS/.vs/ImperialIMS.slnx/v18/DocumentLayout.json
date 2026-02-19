@@ -3,20 +3,44 @@
   "WorkspaceRootPath": "C:\\Users\\smart\\source\\repos\\ImperialIMSKC\\ImperialIMS\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E7566D6E-6EA1-4658-AE6C-0CCA3DC51B0C}|ImperialIMS.Tests\\ImperialIMS.Tests.csproj|c:\\users\\smart\\source\\repos\\imperialimskc\\imperialims\\imperialims.tests\\itemrepo.test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E7566D6E-6EA1-4658-AE6C-0CCA3DC51B0C}|ImperialIMS.Tests\\ImperialIMS.Tests.csproj|solutionrelative:imperialims.tests\\itemrepo.test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4865EA6D-391A-5E35-6577-B9F4212E012A}|ImperialIMS\\ImperialIMS.csproj|c:\\users\\smart\\source\\repos\\imperialimskc\\imperialims\\imperialims\\services\\servicebase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4865EA6D-391A-5E35-6577-B9F4212E012A}|ImperialIMS\\ImperialIMS.csproj|solutionrelative:imperialims\\services\\servicebase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4865EA6D-391A-5E35-6577-B9F4212E012A}|ImperialIMS\\ImperialIMS.csproj|c:\\users\\smart\\source\\repos\\imperialimskc\\imperialims\\imperialims\\models\\itemcategory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4865EA6D-391A-5E35-6577-B9F4212E012A}|ImperialIMS\\ImperialIMS.csproj|solutionrelative:imperialims\\models\\itemcategory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4865EA6D-391A-5E35-6577-B9F4212E012A}|ImperialIMS\\ImperialIMS.csproj|c:\\users\\smart\\source\\repos\\imperialimskc\\imperialims\\imperialims\\repos\\irepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4865EA6D-391A-5E35-6577-B9F4212E012A}|ImperialIMS\\ImperialIMS.csproj|solutionrelative:imperialims\\repos\\irepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4865EA6D-391A-5E35-6577-B9F4212E012A}|ImperialIMS\\ImperialIMS.csproj|c:\\users\\smart\\source\\repos\\imperialimskc\\imperialims\\imperialims\\repos\\itemrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4865EA6D-391A-5E35-6577-B9F4212E012A}|ImperialIMS\\ImperialIMS.csproj|solutionrelative:imperialims\\repos\\itemrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4865EA6D-391A-5E35-6577-B9F4212E012A}|ImperialIMS\\ImperialIMS.csproj|c:\\users\\smart\\source\\repos\\imperialimskc\\imperialims\\imperialims\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4865EA6D-391A-5E35-6577-B9F4212E012A}|ImperialIMS\\ImperialIMS.csproj|solutionrelative:imperialims\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E7566D6E-6EA1-4658-AE6C-0CCA3DC51B0C}|ImperialIMS.Tests\\ImperialIMS.Tests.csproj|c:\\users\\smart\\source\\repos\\imperialimskc\\imperialims\\imperialims.tests\\itemrepotests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E7566D6E-6EA1-4658-AE6C-0CCA3DC51B0C}|ImperialIMS.Tests\\ImperialIMS.Tests.csproj|solutionrelative:imperialims.tests\\itemrepotests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E7566D6E-6EA1-4658-AE6C-0CCA3DC51B0C}|ImperialIMS.Tests\\ImperialIMS.Tests.csproj|c:\\users\\smart\\source\\repos\\imperialimskc\\imperialims\\imperialims.tests\\itemservice.test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E7566D6E-6EA1-4658-AE6C-0CCA3DC51B0C}|ImperialIMS.Tests\\ImperialIMS.Tests.csproj|solutionrelative:imperialims.tests\\itemservice.test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4865EA6D-391A-5E35-6577-B9F4212E012A}|ImperialIMS\\ImperialIMS.csproj|c:\\users\\smart\\source\\repos\\imperialimskc\\imperialims\\imperialims\\repos\\repobase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4865EA6D-391A-5E35-6577-B9F4212E012A}|ImperialIMS\\ImperialIMS.csproj|solutionrelative:imperialims\\repos\\repobase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4865EA6D-391A-5E35-6577-B9F4212E012A}|ImperialIMS\\ImperialIMS.csproj|c:\\users\\smart\\source\\repos\\imperialimskc\\imperialims\\imperialims\\services\\manifestservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4865EA6D-391A-5E35-6577-B9F4212E012A}|ImperialIMS\\ImperialIMS.csproj|solutionrelative:imperialims\\services\\manifestservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4865EA6D-391A-5E35-6577-B9F4212E012A}|ImperialIMS\\ImperialIMS.csproj|c:\\users\\smart\\source\\repos\\imperialimskc\\imperialims\\imperialims\\services\\reportservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4865EA6D-391A-5E35-6577-B9F4212E012A}|ImperialIMS\\ImperialIMS.csproj|solutionrelative:imperialims\\services\\reportservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4865EA6D-391A-5E35-6577-B9F4212E012A}|ImperialIMS\\ImperialIMS.csproj|c:\\users\\smart\\source\\repos\\imperialimskc\\imperialims\\imperialims\\repos\\itemrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4865EA6D-391A-5E35-6577-B9F4212E012A}|ImperialIMS\\ImperialIMS.csproj|solutionrelative:imperialims\\repos\\itemrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4865EA6D-391A-5E35-6577-B9F4212E012A}|ImperialIMS\\ImperialIMS.csproj|c:\\users\\smart\\source\\repos\\imperialimskc\\imperialims\\imperialims\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -27,24 +51,8 @@
       "RelativeMoniker": "D:0:0:{4865EA6D-391A-5E35-6577-B9F4212E012A}|ImperialIMS\\ImperialIMS.csproj|solutionrelative:imperialims\\services\\applicationuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4865EA6D-391A-5E35-6577-B9F4212E012A}|ImperialIMS\\ImperialIMS.csproj|c:\\users\\smart\\source\\repos\\imperialimskc\\imperialims\\imperialims\\services\\manifestservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4865EA6D-391A-5E35-6577-B9F4212E012A}|ImperialIMS\\ImperialIMS.csproj|solutionrelative:imperialims\\services\\manifestservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4865EA6D-391A-5E35-6577-B9F4212E012A}|ImperialIMS\\ImperialIMS.csproj|c:\\users\\smart\\source\\repos\\imperialimskc\\imperialims\\imperialims\\repos\\repobase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4865EA6D-391A-5E35-6577-B9F4212E012A}|ImperialIMS\\ImperialIMS.csproj|solutionrelative:imperialims\\repos\\repobase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{4865EA6D-391A-5E35-6577-B9F4212E012A}|ImperialIMS\\ImperialIMS.csproj|c:\\users\\smart\\source\\repos\\imperialimskc\\imperialims\\imperialims\\services\\itemservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4865EA6D-391A-5E35-6577-B9F4212E012A}|ImperialIMS\\ImperialIMS.csproj|solutionrelative:imperialims\\services\\itemservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4865EA6D-391A-5E35-6577-B9F4212E012A}|ImperialIMS\\ImperialIMS.csproj|c:\\users\\smart\\source\\repos\\imperialimskc\\imperialims\\imperialims\\services\\servicebase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4865EA6D-391A-5E35-6577-B9F4212E012A}|ImperialIMS\\ImperialIMS.csproj|solutionrelative:imperialims\\services\\servicebase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E7566D6E-6EA1-4658-AE6C-0CCA3DC51B0C}|ImperialIMS.Tests\\ImperialIMS.Tests.csproj|c:\\users\\smart\\source\\repos\\imperialimskc\\imperialims\\imperialims.tests\\itemservice.test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E7566D6E-6EA1-4658-AE6C-0CCA3DC51B0C}|ImperialIMS.Tests\\ImperialIMS.Tests.csproj|solutionrelative:imperialims.tests\\itemservice.test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4865EA6D-391A-5E35-6577-B9F4212E012A}|ImperialIMS\\ImperialIMS.csproj|c:\\users\\smart\\source\\repos\\imperialimskc\\imperialims\\imperialims\\helpers\\policytypes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -73,10 +81,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{4865EA6D-391A-5E35-6577-B9F4212E012A}|ImperialIMS\\ImperialIMS.csproj|c:\\users\\smart\\source\\repos\\imperialimskc\\imperialims\\imperialims\\services\\iservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4865EA6D-391A-5E35-6577-B9F4212E012A}|ImperialIMS\\ImperialIMS.csproj|solutionrelative:imperialims\\services\\iservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4865EA6D-391A-5E35-6577-B9F4212E012A}|ImperialIMS\\ImperialIMS.csproj|c:\\users\\smart\\source\\repos\\imperialimskc\\imperialims\\imperialims\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4865EA6D-391A-5E35-6577-B9F4212E012A}|ImperialIMS\\ImperialIMS.csproj|solutionrelative:imperialims\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -86,7 +90,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 12,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Bookmark",
@@ -110,20 +114,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ItemRepo.cs",
-              "DocumentMoniker": "C:\\Users\\smart\\source\\repos\\ImperialIMSKC\\ImperialIMS\\ImperialIMS\\Repos\\ItemRepo.cs",
-              "RelativeDocumentMoniker": "ImperialIMS\\Repos\\ItemRepo.cs",
-              "ToolTip": "C:\\Users\\smart\\source\\repos\\ImperialIMSKC\\ImperialIMS\\ImperialIMS\\Repos\\ItemRepo.cs",
-              "RelativeToolTip": "ImperialIMS\\Repos\\ItemRepo.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "ItemCategory.cs",
+              "DocumentMoniker": "C:\\Users\\smart\\source\\repos\\ImperialIMSKC\\ImperialIMS\\ImperialIMS\\Models\\ItemCategory.cs",
+              "RelativeDocumentMoniker": "ImperialIMS\\Models\\ItemCategory.cs",
+              "ToolTip": "C:\\Users\\smart\\source\\repos\\ImperialIMSKC\\ImperialIMS\\ImperialIMS\\Models\\ItemCategory.cs",
+              "RelativeToolTip": "ImperialIMS\\Models\\ItemCategory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-19T03:25:25.475Z",
+              "WhenOpened": "2026-02-19T04:01:40.502Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 6,
               "Title": "RepoBase.cs",
               "DocumentMoniker": "C:\\Users\\smart\\source\\repos\\ImperialIMSKC\\ImperialIMS\\ImperialIMS\\Repos\\RepoBase.cs",
               "RelativeDocumentMoniker": "ImperialIMS\\Repos\\RepoBase.cs",
@@ -136,59 +140,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "ServiceBase.cs",
-              "DocumentMoniker": "C:\\Users\\smart\\source\\repos\\ImperialIMSKC\\ImperialIMS\\ImperialIMS\\Services\\ServiceBase.cs",
-              "RelativeDocumentMoniker": "ImperialIMS\\Services\\ServiceBase.cs",
-              "ToolTip": "C:\\Users\\smart\\source\\repos\\ImperialIMSKC\\ImperialIMS\\ImperialIMS\\Services\\ServiceBase.cs",
-              "RelativeToolTip": "ImperialIMS\\Services\\ServiceBase.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAA0wCEAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-17T03:42:46.421Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "IRepo.cs",
-              "DocumentMoniker": "C:\\Users\\smart\\source\\repos\\ImperialIMSKC\\ImperialIMS\\ImperialIMS\\Repos\\IRepo.cs",
-              "RelativeDocumentMoniker": "ImperialIMS\\Repos\\IRepo.cs",
-              "ToolTip": "C:\\Users\\smart\\source\\repos\\ImperialIMSKC\\ImperialIMS\\ImperialIMS\\Repos\\IRepo.cs",
-              "RelativeToolTip": "ImperialIMS\\Repos\\IRepo.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-17T03:57:22.377Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ApplicationUserService.cs",
-              "DocumentMoniker": "C:\\Users\\smart\\source\\repos\\ImperialIMSKC\\ImperialIMS\\ImperialIMS\\Services\\ApplicationUserService.cs",
-              "RelativeDocumentMoniker": "ImperialIMS\\Services\\ApplicationUserService.cs",
-              "ToolTip": "C:\\Users\\smart\\source\\repos\\ImperialIMSKC\\ImperialIMS\\ImperialIMS\\Services\\ApplicationUserService.cs",
-              "RelativeToolTip": "ImperialIMS\\Services\\ApplicationUserService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-17T16:02:12.905Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\smart\\source\\repos\\ImperialIMSKC\\ImperialIMS\\ImperialIMS\\Program.cs",
-              "RelativeDocumentMoniker": "ImperialIMS\\Program.cs",
-              "ToolTip": "C:\\Users\\smart\\source\\repos\\ImperialIMSKC\\ImperialIMS\\ImperialIMS\\Program.cs",
-              "RelativeToolTip": "ImperialIMS\\Program.cs",
-              "ViewState": "AgIAACMAAAAAAAAAAAAUwDgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-09T17:25:11.801Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "ManifestService.cs",
               "DocumentMoniker": "C:\\Users\\smart\\source\\repos\\ImperialIMSKC\\ImperialIMS\\ImperialIMS\\Services\\ManifestService.cs",
               "RelativeDocumentMoniker": "ImperialIMS\\Services\\ManifestService.cs",
@@ -201,58 +153,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ItemRepo.Test.cs",
-              "DocumentMoniker": "C:\\Users\\smart\\source\\repos\\ImperialIMSKC\\ImperialIMS\\ImperialIMS.Tests\\ItemRepo.Test.cs",
-              "RelativeDocumentMoniker": "ImperialIMS.Tests\\ItemRepo.Test.cs",
-              "ToolTip": "C:\\Users\\smart\\source\\repos\\ImperialIMSKC\\ImperialIMS\\ImperialIMS.Tests\\ItemRepo.Test.cs*",
-              "RelativeToolTip": "ImperialIMS.Tests\\ItemRepo.Test.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "ItemRepoTests.cs",
+              "DocumentMoniker": "C:\\Users\\smart\\source\\repos\\ImperialIMSKC\\ImperialIMS\\ImperialIMS.Tests\\ItemRepoTests.cs",
+              "RelativeDocumentMoniker": "ImperialIMS.Tests\\ItemRepoTests.cs",
+              "ToolTip": "C:\\Users\\smart\\source\\repos\\ImperialIMSKC\\ImperialIMS\\ImperialIMS.Tests\\ItemRepoTests.cs",
+              "RelativeToolTip": "ImperialIMS.Tests\\ItemRepoTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-19T02:55:41.941Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ItemService.cs",
-              "DocumentMoniker": "C:\\Users\\smart\\source\\repos\\ImperialIMSKC\\ImperialIMS\\ImperialIMS\\Services\\ItemService.cs",
-              "RelativeDocumentMoniker": "ImperialIMS\\Services\\ItemService.cs",
-              "ToolTip": "C:\\Users\\smart\\source\\repos\\ImperialIMSKC\\ImperialIMS\\ImperialIMS\\Services\\ItemService.cs",
-              "RelativeToolTip": "ImperialIMS\\Services\\ItemService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-17T15:45:22.909Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ReportService.cs",
-              "DocumentMoniker": "C:\\Users\\smart\\source\\repos\\ImperialIMSKC\\ImperialIMS\\ImperialIMS\\Services\\ReportService.cs",
-              "RelativeDocumentMoniker": "ImperialIMS\\Services\\ReportService.cs",
-              "ToolTip": "C:\\Users\\smart\\source\\repos\\ImperialIMSKC\\ImperialIMS\\ImperialIMS\\Services\\ReportService.cs",
-              "RelativeToolTip": "ImperialIMS\\Services\\ReportService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAcwB8AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-19T03:03:01.389Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "StorageFacilityService.cs",
-              "DocumentMoniker": "C:\\Users\\smart\\source\\repos\\ImperialIMSKC\\ImperialIMS\\ImperialIMS\\Services\\StorageFacilityService.cs",
-              "RelativeDocumentMoniker": "ImperialIMS\\Services\\StorageFacilityService.cs",
-              "ToolTip": "C:\\Users\\smart\\source\\repos\\ImperialIMSKC\\ImperialIMS\\ImperialIMS\\Services\\StorageFacilityService.cs",
-              "RelativeToolTip": "ImperialIMS\\Services\\StorageFacilityService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-17T15:45:50.061Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 5,
               "Title": "ItemService.Test.cs",
               "DocumentMoniker": "C:\\Users\\smart\\source\\repos\\ImperialIMSKC\\ImperialIMS\\ImperialIMS.Tests\\ItemService.Test.cs",
               "RelativeDocumentMoniker": "ImperialIMS.Tests\\ItemService.Test.cs",
@@ -265,7 +179,124 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 3,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\smart\\source\\repos\\ImperialIMSKC\\ImperialIMS\\ImperialIMS\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "ImperialIMS\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\smart\\source\\repos\\ImperialIMSKC\\ImperialIMS\\ImperialIMS\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "ImperialIMS\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAAD4v0cAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T17:34:24.808Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ServiceBase.cs",
+              "DocumentMoniker": "C:\\Users\\smart\\source\\repos\\ImperialIMSKC\\ImperialIMS\\ImperialIMS\\Services\\ServiceBase.cs",
+              "RelativeDocumentMoniker": "ImperialIMS\\Services\\ServiceBase.cs",
+              "ToolTip": "C:\\Users\\smart\\source\\repos\\ImperialIMSKC\\ImperialIMS\\ImperialIMS\\Services\\ServiceBase.cs",
+              "RelativeToolTip": "ImperialIMS\\Services\\ServiceBase.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAtwCkAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-17T03:42:46.421Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ReportService.cs",
+              "DocumentMoniker": "C:\\Users\\smart\\source\\repos\\ImperialIMSKC\\ImperialIMS\\ImperialIMS\\Services\\ReportService.cs",
+              "RelativeDocumentMoniker": "ImperialIMS\\Services\\ReportService.cs",
+              "ToolTip": "C:\\Users\\smart\\source\\repos\\ImperialIMSKC\\ImperialIMS\\ImperialIMS\\Services\\ReportService.cs",
+              "RelativeToolTip": "ImperialIMS\\Services\\ReportService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAcwB8AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-19T03:03:01.389Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IRepo.cs",
+              "DocumentMoniker": "C:\\Users\\smart\\source\\repos\\ImperialIMSKC\\ImperialIMS\\ImperialIMS\\Repos\\IRepo.cs",
+              "RelativeDocumentMoniker": "ImperialIMS\\Repos\\IRepo.cs",
+              "ToolTip": "C:\\Users\\smart\\source\\repos\\ImperialIMSKC\\ImperialIMS\\ImperialIMS\\Repos\\IRepo.cs",
+              "RelativeToolTip": "ImperialIMS\\Repos\\IRepo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAoAAABcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-17T03:57:22.377Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ItemRepo.cs",
+              "DocumentMoniker": "C:\\Users\\smart\\source\\repos\\ImperialIMSKC\\ImperialIMS\\ImperialIMS\\Repos\\ItemRepo.cs",
+              "RelativeDocumentMoniker": "ImperialIMS\\Repos\\ItemRepo.cs",
+              "ToolTip": "C:\\Users\\smart\\source\\repos\\ImperialIMSKC\\ImperialIMS\\ImperialIMS\\Repos\\ItemRepo.cs",
+              "RelativeToolTip": "ImperialIMS\\Repos\\ItemRepo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-19T03:25:25.475Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\smart\\source\\repos\\ImperialIMSKC\\ImperialIMS\\ImperialIMS\\Program.cs",
+              "RelativeDocumentMoniker": "ImperialIMS\\Program.cs",
+              "ToolTip": "C:\\Users\\smart\\source\\repos\\ImperialIMSKC\\ImperialIMS\\ImperialIMS\\Program.cs",
+              "RelativeToolTip": "ImperialIMS\\Program.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAUwDgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-09T17:25:11.801Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ApplicationUserService.cs",
+              "DocumentMoniker": "C:\\Users\\smart\\source\\repos\\ImperialIMSKC\\ImperialIMS\\ImperialIMS\\Services\\ApplicationUserService.cs",
+              "RelativeDocumentMoniker": "ImperialIMS\\Services\\ApplicationUserService.cs",
+              "ToolTip": "C:\\Users\\smart\\source\\repos\\ImperialIMSKC\\ImperialIMS\\ImperialIMS\\Services\\ApplicationUserService.cs",
+              "RelativeToolTip": "ImperialIMS\\Services\\ApplicationUserService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-17T16:02:12.905Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ItemService.cs",
+              "DocumentMoniker": "C:\\Users\\smart\\source\\repos\\ImperialIMSKC\\ImperialIMS\\ImperialIMS\\Services\\ItemService.cs",
+              "RelativeDocumentMoniker": "ImperialIMS\\Services\\ItemService.cs",
+              "ToolTip": "C:\\Users\\smart\\source\\repos\\ImperialIMSKC\\ImperialIMS\\ImperialIMS\\Services\\ItemService.cs",
+              "RelativeToolTip": "ImperialIMS\\Services\\ItemService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-17T15:45:22.909Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "StorageFacilityService.cs",
+              "DocumentMoniker": "C:\\Users\\smart\\source\\repos\\ImperialIMSKC\\ImperialIMS\\ImperialIMS\\Services\\StorageFacilityService.cs",
+              "RelativeDocumentMoniker": "ImperialIMS\\Services\\StorageFacilityService.cs",
+              "ToolTip": "C:\\Users\\smart\\source\\repos\\ImperialIMSKC\\ImperialIMS\\ImperialIMS\\Services\\StorageFacilityService.cs",
+              "RelativeToolTip": "ImperialIMS\\Services\\StorageFacilityService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-17T15:45:50.061Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
               "Title": "EntityBase.cs",
               "DocumentMoniker": "C:\\Users\\smart\\source\\repos\\ImperialIMSKC\\ImperialIMS\\ImperialIMS\\Models\\EntityBase.cs",
               "RelativeDocumentMoniker": "ImperialIMS\\Models\\EntityBase.cs",
@@ -273,11 +304,12 @@
               "RelativeToolTip": "ImperialIMS\\Models\\EntityBase.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-17T15:56:37.61Z"
+              "WhenOpened": "2026-02-17T15:56:37.61Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "PolicyTypes.cs",
               "DocumentMoniker": "C:\\Users\\smart\\source\\repos\\ImperialIMSKC\\ImperialIMS\\ImperialIMS\\Helpers\\PolicyTypes.cs",
               "RelativeDocumentMoniker": "ImperialIMS\\Helpers\\PolicyTypes.cs",
@@ -285,11 +317,12 @@
               "RelativeToolTip": "ImperialIMS\\Helpers\\PolicyTypes.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-17T16:04:30.092Z"
+              "WhenOpened": "2026-02-17T16:04:30.092Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "ShipmentService.cs",
               "DocumentMoniker": "C:\\Users\\smart\\source\\repos\\ImperialIMSKC\\ImperialIMS\\ImperialIMS\\Services\\ShipmentService.cs",
               "RelativeDocumentMoniker": "ImperialIMS\\Services\\ShipmentService.cs",
@@ -297,11 +330,12 @@
               "RelativeToolTip": "ImperialIMS\\Services\\ShipmentService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-17T15:45:40.835Z"
+              "WhenOpened": "2026-02-17T15:45:40.835Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "InventoryItemService.cs",
               "DocumentMoniker": "C:\\Users\\smart\\source\\repos\\ImperialIMSKC\\ImperialIMS\\ImperialIMS\\Services\\InventoryItemService.cs",
               "RelativeDocumentMoniker": "ImperialIMS\\Services\\InventoryItemService.cs",
@@ -309,11 +343,12 @@
               "RelativeToolTip": "ImperialIMS\\Services\\InventoryItemService.cs",
               "ViewState": "AgIAAAoAAAAAAAAAAAAgwCAAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-17T15:45:15.732Z"
+              "WhenOpened": "2026-02-17T15:45:15.732Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 18,
               "Title": "CategoryService.cs",
               "DocumentMoniker": "C:\\Users\\smart\\source\\repos\\ImperialIMSKC\\ImperialIMS\\ImperialIMS\\Services\\CategoryService.cs",
               "RelativeDocumentMoniker": "ImperialIMS\\Services\\CategoryService.cs",
@@ -321,31 +356,21 @@
               "RelativeToolTip": "ImperialIMS\\Services\\CategoryService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-17T15:45:03.049Z"
+              "WhenOpened": "2026-02-17T15:45:03.049Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 19,
               "Title": "IService.cs",
               "DocumentMoniker": "C:\\Users\\smart\\source\\repos\\ImperialIMSKC\\ImperialIMS\\ImperialIMS\\Services\\IService.cs",
               "RelativeDocumentMoniker": "ImperialIMS\\Services\\IService.cs",
               "ToolTip": "C:\\Users\\smart\\source\\repos\\ImperialIMSKC\\ImperialIMS\\ImperialIMS\\Services\\IService.cs",
               "RelativeToolTip": "ImperialIMS\\Services\\IService.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAoAAAATAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAIBJwAoAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-17T03:57:35.602Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "ApplicationDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\smart\\source\\repos\\ImperialIMSKC\\ImperialIMS\\ImperialIMS\\Data\\ApplicationDbContext.cs",
-              "RelativeDocumentMoniker": "ImperialIMS\\Data\\ApplicationDbContext.cs",
-              "ToolTip": "C:\\Users\\smart\\source\\repos\\ImperialIMSKC\\ImperialIMS\\ImperialIMS\\Data\\ApplicationDbContext.cs",
-              "RelativeToolTip": "ImperialIMS\\Data\\ApplicationDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-09T17:34:24.808Z"
+              "WhenOpened": "2026-02-17T03:57:35.602Z",
+              "EditorCaption": ""
             }
           ]
         }

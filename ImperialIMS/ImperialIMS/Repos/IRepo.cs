@@ -8,7 +8,7 @@ namespace ImperialIMS.Repos
         bool HasChanges { get; }
         T Find(int? id);
         IEnumerable<T> GetRange(int skip, int take);
-        IQueryable<T> Search(Expression<Func<T, bool>> filter = null, IOrderedQueryable<T> orderBy = null);
+        IQueryable<T> Search(Expression<Func<T, bool>>? filter = null, IOrderedQueryable<T>? orderBy = null);
         int Add(T entity, bool persist = true);
         int AddRange(IEnumerable<T> entities, bool persist = true);
         int Update(T entity, bool persist = true);
