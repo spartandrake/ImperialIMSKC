@@ -1,3 +1,4 @@
 <Solution>
+  <Project Path="ImperialIMS.Tests/ImperialIMS.Tests.csproj" Id="e7566d6e-6ea1-4658-ae6c-0cca3dc51b0c" />
   <Project Path="ImperialIMS/ImperialIMS.csproj" />
 </Solution>
