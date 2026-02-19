@@ -1,6 +1,7 @@
 using ImperialIMS.Data;
 using ImperialIMS.Models;
 using ImperialIMS.Repos;
+using ImperialIMS.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Hosting;
@@ -30,7 +31,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlite(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = !builder.Environment.IsDevelopment())
+builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = !builder.Environment.IsDevelopment())
     .AddEntityFrameworkStores<ApplicationDbContext>();
 
 //Needed for layout testing
@@ -45,6 +46,14 @@ builder.Services.AddScoped<IRepo<Manifest>, ManifestRepo>();
 builder.Services.AddScoped<IRepo<Shipment>, ShipmentRepo>();
 builder.Services.AddScoped<IRepo<StorageFacility>, StorageFacilityRepo>();
 
+builder.Services.AddScoped<ApplicationUserService>();
+builder.Services.AddScoped<CategoryService>();
+builder.Services.AddScoped<InventoryItemService>();
+builder.Services.AddScoped<ItemService>();
+builder.Services.AddScoped<ManifestService>();
+builder.Services.AddScoped<ShipmentService>();
+builder.Services.AddScoped<StorageFacilityService>();
+builder.Services.AddScoped<ReportService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

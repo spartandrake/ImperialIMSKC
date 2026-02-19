@@ -1,0 +1,8 @@
+C:\Users\smart\source\repos\ImperialIMSKC\ImperialIMS\ImperialIMS.Tests\bin\Debug\net10.0\.msCoverageSourceRootsMapping_ImperialIMS.Tests
+C:\Users\smart\source\repos\ImperialIMSKC\ImperialIMS\ImperialIMS.Tests\bin\Debug\net10.0\CoverletSourceRootsMapping_ImperialIMS.Tests
+C:\Users\smart\source\repos\ImperialIMSKC\ImperialIMS\ImperialIMS.Tests\obj\Debug\net10.0\ImperialIMS.Tests.csproj.AssemblyReference.cache
+C:\Users\smart\source\repos\ImperialIMSKC\ImperialIMS\ImperialIMS.Tests\obj\Debug\net10.0\ImperialIMS.Tests.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\smart\source\repos\ImperialIMSKC\ImperialIMS\ImperialIMS.Tests\obj\Debug\net10.0\ImperialIMS.Tests.AssemblyInfoInputs.cache
+C:\Users\smart\source\repos\ImperialIMSKC\ImperialIMS\ImperialIMS.Tests\obj\Debug\net10.0\ImperialIMS.Tests.AssemblyInfo.cs
+C:\Users\smart\source\repos\ImperialIMSKC\ImperialIMS\ImperialIMS.Tests\obj\Debug\net10.0\ImperialIMS.Tests.csproj.CoreCompileInputs.cache
+C:\Users\smart\source\repos\ImperialIMSKC\ImperialIMS\ImperialIMS.Tests\obj\Debug\net10.0\ImperialIMS.Tests.sourcelink.json
