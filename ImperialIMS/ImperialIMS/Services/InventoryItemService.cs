@@ -6,8 +6,15 @@ namespace ImperialIMS.Services
     public class InventoryItemService : ServiceBase<InventoryItem>
     {
         private readonly ILogger<InventoryItem> _logger;
+        private readonly IRepo<InventoryItem> _repo;
+        private IConfiguration _configuration { get; set; }
+        private InventoryItem _item { get; set; }
+        private List<InventoryItem> _items { get; set; }
         public InventoryItemService(IRepo<InventoryItem> repo, IConfiguration configuration, ILogger<InventoryItem> logger) : base(repo, configuration, logger)
         {
+            _repo = repo;
+            _logger = logger;
+            _configuration = configuration;
         }
         private void DecrementStock(InventoryItem item, int quantity)
         {

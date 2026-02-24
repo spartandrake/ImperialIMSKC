@@ -5,12 +5,12 @@ namespace ImperialIMS.Services
 {
     public class ReportService
     {
-        private readonly ItemRepo _itemRepo;
+        private readonly IRepo<Item> _itemRepo;
         private readonly ApplicationUserService _applicationUserService;
-        private readonly InventoryItemRepo _inventoryItemRepo;
-        private readonly ShipmentRepo _shipmentRepo;
-        private readonly AlertRepo _alertRepo;
-        public ReportService(ItemRepo itemRepo, ApplicationUserService applicationUserService, InventoryItemRepo inventoryItemRepo, ShipmentRepo shipmentRepo, AlertRepo alertRepo)
+        private readonly IRepo<InventoryItem> _inventoryItemRepo;
+        private readonly IRepo<Shipment> _shipmentRepo;
+        private readonly IRepo<Alert> _alertRepo;
+        public ReportService(IRepo<Item> itemRepo, ApplicationUserService applicationUserService, IRepo<InventoryItem> inventoryItemRepo, IRepo<Shipment> shipmentRepo, IRepo<Alert> alertRepo)
         {
             _itemRepo = itemRepo;
             _applicationUserService = applicationUserService;

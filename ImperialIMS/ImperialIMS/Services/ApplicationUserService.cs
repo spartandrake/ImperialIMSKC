@@ -55,7 +55,7 @@ namespace ImperialIMS.Services
             Claim? Claim;
             try
             {
-                if (Type.Equals(PolicyTypes.IsAdmin) || Type.Equals(PolicyTypes.IsManager))
+                if (Type.Equals(PolicyTypes.IsAdmin) || Type.Equals(PolicyTypes.IsOfficer))
                 {
                     Claim = new Claim(Type, Value);
                 }
