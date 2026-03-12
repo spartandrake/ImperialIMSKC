@@ -2,6 +2,7 @@ using ImperialIMS.Data;
 using ImperialIMS.Models;
 using ImperialIMS.Repos;
 using ImperialIMS.Services;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Hosting;
@@ -33,6 +34,11 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = !builder.Environment.IsDevelopment())
     .AddEntityFrameworkStores<ApplicationDbContext>();
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options =>
+    {
+        options.LoginPath = "/Identity/Account/Login"; // Set your specific login page path
+    });
 
 //Needed for layout testing
 builder.Services.AddHttpContextAccessor();
@@ -54,8 +60,30 @@ builder.Services.AddScoped<ManifestService>();
 builder.Services.AddScoped<ShipmentService>();
 builder.Services.AddScoped<StorageFacilityService>();
 builder.Services.AddScoped<ReportService>();
-var app = builder.Build();
 
+builder.Services.AddRazorPages(options =>
+{
+    options.Conventions.AllowAnonymousToAreaPage("Identity", "/Account/Login"); 
+    options.Conventions.AllowAnonymousToAreaPage("Identity", "/Account/Register");
+});
+var app = builder.Build();
+using (var scope = app.Services.CreateScope())
+{
+    IServiceProvider serviceProvider = scope.ServiceProvider;
+    try
+    {
+        ApplicationDbContext dbContext = serviceProvider.GetRequiredService<ApplicationDbContext>();
+        dbContext.Database.Migrate();
+        UserManager<ApplicationUser> userManager = serviceProvider.GetRequiredService<UserManager<ApplicationUser>>();
+        IConfiguration configuration = serviceProvider.GetRequiredService<IConfiguration>();
+
+        await ApplicationUserSeedData.SeedAdminUserAsync(userManager, configuration);
+    }
+    catch (Exception ex)
+    {
+        Console.Write(ex.Message);
+    }
+}
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -75,7 +103,7 @@ else
 app.UseHttpsRedirection();
 
 app.UseRouting();
-
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapStaticAssets();

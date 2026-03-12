@@ -1,10 +1,20 @@
 ﻿@page
 @model IndexModel
+@using ImperialIMS.Models;
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<ApplicationUser> SignInManager
 @{
     ViewData["Title"] = "Home page";
 }
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
-    <p>The Empire needs YOU!</a>.</p>
+    @if (SignInManager.IsSignedIn(User))
+    {
+        <p>Welcome back, @User.Identity?.Name!</p>
+    }
+    else
+    {
+        <p>The Empire needs <a asp-area="Identity" asp-page="/Account/Login">YOU!</a> <a asp-area="Identity" asp-page="/Account/Register">Enlist Today!</a>.</p>
+    }
 </div>

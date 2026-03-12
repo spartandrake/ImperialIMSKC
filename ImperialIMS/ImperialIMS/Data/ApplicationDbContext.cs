@@ -5,7 +5,7 @@ using Microsoft.Extensions.Hosting;
 
 namespace ImperialIMS.Data
 {
-    public class ApplicationDbContext : IdentityDbContext
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         private IConfiguration _config;
         public DbSet<Alert> Alerts { get; set; }
