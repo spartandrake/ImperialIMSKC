@@ -214,7 +214,6 @@ C:\Users\smart\source\repos\ImperialIMSKC\ImperialIMS\ImperialIMS\obj\Debug\net1
 C:\Users\smart\source\repos\ImperialIMSKC\ImperialIMS\ImperialIMS\obj\Debug\net10.0\compressed\nezrqnk58p-{0}-muycvpuwrr-muycvpuwrr.gz
 C:\Users\smart\source\repos\ImperialIMSKC\ImperialIMS\ImperialIMS\obj\Debug\net10.0\compressed\v0zgfp0y55-{0}-87fc7y1x7t-87fc7y1x7t.gz
 C:\Users\smart\source\repos\ImperialIMSKC\ImperialIMS\ImperialIMS\obj\Debug\net10.0\compressed\yfc7ypekbg-{0}-mlv21k5csn-mlv21k5csn.gz
-C:\Users\smart\source\repos\ImperialIMSKC\ImperialIMS\ImperialIMS\obj\Debug\net10.0\compressed\eo78c4mjl1-{0}-b9sayid5wm-b9sayid5wm.gz
 C:\Users\smart\source\repos\ImperialIMSKC\ImperialIMS\ImperialIMS\obj\Debug\net10.0\compressed\c0020majft-{0}-61n19gt1b8-61n19gt1b8.gz
 C:\Users\smart\source\repos\ImperialIMSKC\ImperialIMS\ImperialIMS\obj\Debug\net10.0\compressed\2j9bxugg7j-{0}-xtxxf3hu2r-xtxxf3hu2r.gz
 C:\Users\smart\source\repos\ImperialIMSKC\ImperialIMS\ImperialIMS\obj\Debug\net10.0\compressed\jp2xv2k7nc-{0}-c2jlpeoesf-c2jlpeoesf.gz
@@ -339,3 +338,5 @@ C:\Users\smart\source\repos\ImperialIMSKC\ImperialIMS\ImperialIMS\obj\Debug\net1
 C:\Users\smart\source\repos\ImperialIMSKC\ImperialIMS\ImperialIMS\obj\Debug\net10.0\compressed\qcovel0jwr-{0}-jjsuc0puko-jjsuc0puko.gz
 C:\Users\smart\source\repos\ImperialIMSKC\ImperialIMS\ImperialIMS\obj\Debug\net10.0\compressed\pehwsftvza-{0}-9vr69e8ynj-9vr69e8ynj.gz
 C:\Users\smart\source\repos\ImperialIMSKC\ImperialIMS\ImperialIMS\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
+C:\Users\smart\source\repos\ImperialIMSKC\ImperialIMS\ImperialIMS\obj\Debug\net10.0\compressed\83qkbcx1q5-{0}-maizb3dk6l-maizb3dk6l.gz
+C:\Users\smart\source\repos\ImperialIMSKC\ImperialIMS\ImperialIMS\obj\Debug\net10.0\compressed\eo78c4mjl1-{0}-9gt7e8hyni-9gt7e8hyni.gz

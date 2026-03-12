@@ -18,7 +18,10 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    color: #fff;
+    text-transform: uppercase;
+    text-shadow: 0 0 .625em #fff, 0 0 1.5625em #fff, -.0625em 0 .125em rgba(0, 0, 0, 0.5);
 }
 
 .form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
@@ -29,3 +32,13 @@ body {
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
   text-align: start;
 }
+.tv {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+    .tv canvas {
+        height: 100%;
+        width: 100%;
+    }

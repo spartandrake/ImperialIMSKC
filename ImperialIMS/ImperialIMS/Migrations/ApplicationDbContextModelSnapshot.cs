@@ -201,6 +201,9 @@ namespace ImperialIMS.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("INTEGER");
 
+                    b.Property<DateTime>("ReceivedDate")
+                        .HasColumnType("TEXT");
+
                     b.Property<DateTime>("RequestDate")
                         .HasColumnType("TEXT");
 
@@ -465,7 +468,7 @@ namespace ImperialIMS.Migrations
                         .IsRequired();
 
                     b.HasOne("ImperialIMS.Models.StorageFacility", "StorageFacility")
-                        .WithMany()
+                        .WithMany("Inventory")
                         .HasForeignKey("StorageFacilityId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -562,6 +565,11 @@ namespace ImperialIMS.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("ImperialIMS.Models.StorageFacility", b =>
+                {
+                    b.Navigation("Inventory");
                 });
 #pragma warning restore 612, 618
         }
