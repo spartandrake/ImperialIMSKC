@@ -17,4 +17,16 @@
     {
         <p>The Empire needs <a asp-area="Identity" asp-page="/Account/Login">YOU!</a> <a asp-area="Identity" asp-page="/Account/Register">Enlist Today!</a>.</p>
     }
+    @foreach (var alert in Model.Alerts)
+    {
+        <div class="alert alert-info" role="alert">
+            @alert.Message
+        </div>
+    }
+    @foreach (var shipment in Model.Shipments)
+    {
+        <div class="alert alert-danger" role="alert">
+            @shipment.Id - @shipment.TrackingId - @shipment.Status
+        </div>
+    }
 </div>

@@ -15,6 +15,10 @@ namespace ImperialIMS.Services
             _configuration = configuration;
             _logger = logger;
         }
+        public List<Shipment> GetAllForUser(string userid)
+        {
+            return _repo.Search().Where(s => s.ApplicationUserId.ToString() == userid).ToList();
+        }
         public void MarkShipmentAsReceived(int shipmentId)
         {
             var shipment = Get(shipmentId);
