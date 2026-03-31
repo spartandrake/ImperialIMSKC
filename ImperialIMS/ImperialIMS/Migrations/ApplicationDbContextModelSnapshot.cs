@@ -23,6 +23,9 @@ namespace ImperialIMS.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<int>("ApplicationUserId")
+                        .HasColumnType("INTEGER");
+
                     b.Property<int?>("InventoryItemId")
                         .HasColumnType("INTEGER");
 
@@ -195,8 +198,16 @@ namespace ImperialIMS.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("INTEGER");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
 
                     b.Property<long>("TimeStamp")
                         .IsConcurrencyToken()
@@ -270,6 +281,9 @@ namespace ImperialIMS.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("ApplicationUserId")
                         .HasColumnType("INTEGER");
 
                     b.Property<bool>("IsDeleted")

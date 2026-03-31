@@ -50,6 +50,38 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/smart/source/repos/ImperialIMSKC/ImperialIMS/ImperialIMS/Pages/Account/Alerts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxBbGVydHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/smart/source/repos/ImperialIMSKC/ImperialIMS/ImperialIMS/Pages/Account/Shipments.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxTaGlwbWVudHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/smart/source/repos/ImperialIMSKC/ImperialIMS/ImperialIMS/Pages/Admin/Inventory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cSW52ZW50b3J5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/smart/source/repos/ImperialIMSKC/ImperialIMS/ImperialIMS/Pages/Admin/Item.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cSXRlbS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/smart/source/repos/ImperialIMSKC/ImperialIMS/ImperialIMS/Pages/Admin/RecycleBin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cUmVjeWNsZUJpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/smart/source/repos/ImperialIMSKC/ImperialIMS/ImperialIMS/Pages/Admin/StorageFacility.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cU3RvcmFnZUZhY2lsaXR5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/smart/source/repos/ImperialIMSKC/ImperialIMS/ImperialIMS/Pages/Admin/Users.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cVXNlcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/smart/source/repos/ImperialIMSKC/ImperialIMS/ImperialIMS/Pages/Alerts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWxlcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/smart/source/repos/ImperialIMSKC/ImperialIMS/ImperialIMS/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -58,8 +90,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/smart/source/repos/ImperialIMSKC/ImperialIMS/ImperialIMS/Pages/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
+[C:/Users/smart/source/repos/ImperialIMSKC/ImperialIMS/ImperialIMS/Pages/Manifest.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWFuaWZlc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/smart/source/repos/ImperialIMSKC/ImperialIMS/ImperialIMS/Pages/Search.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2VhcmNoLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/smart/source/repos/ImperialIMSKC/ImperialIMS/ImperialIMS/Pages/Shared/_LoginPartial.cshtml]
@@ -68,6 +104,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/smart/source/repos/ImperialIMSKC/ImperialIMS/ImperialIMS/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/smart/source/repos/ImperialIMSKC/ImperialIMS/ImperialIMS/Pages/Shipments.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hpcG1lbnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/smart/source/repos/ImperialIMSKC/ImperialIMS/ImperialIMS/Pages/_ViewImports.cshtml]

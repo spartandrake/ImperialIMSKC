@@ -8,7 +8,7 @@ using System.Security.Claims;
 
 namespace ImperialIMS.Pages
 {
-    [Authorize]
+     
     public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;
@@ -20,19 +20,22 @@ namespace ImperialIMS.Pages
         public List<Alert> Alerts { get; set; } = new List<Alert>();
         public void OnGet()
         {
-            try
+            if (User.Identity.IsAuthenticated)
             {
-                var claimsIdentity = (ClaimsIdentity)User.Identity;
-                var claim = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier);
-                if (claim != null)
+                try
                 {
-                    CurrentUserId = claim.Value;
+                    var claimsIdentity = (ClaimsIdentity)User.Identity;
+                    var claim = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier);
+                    if (claim != null)
+                    {
+                        CurrentUserId = claim.Value;
+                    }
+                    Shipments = _shipmentService.GetAllForUser(CurrentUserId);
+                    Alerts = _alertService.GetAllForUser(CurrentUserId);
                 }
-                Shipments = _shipmentService.GetAllForUser(CurrentUserId);
-                Alerts = _alertService.GetAllForUser(CurrentUserId);
-            }
-            catch (Exception ex)
-            {
+                catch (Exception ex)
+                {
+                }
             }
         }
     }
