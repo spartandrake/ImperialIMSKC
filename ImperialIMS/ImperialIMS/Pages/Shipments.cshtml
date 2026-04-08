@@ -11,13 +11,15 @@ If the shipment is delivered, allow the user to confirm receipt of the shipment
 If the shipment is completed show the shipment details and grey out the entry
 @foreach (var shipment in Model.userShipments)
 {
-    <div class="shipment">
-        <h3>Shipment #@shipment.Id</h3>
-        <p>Status: @shipment.Status</p>
-        <p>Estimated Delivery: @shipment.EstimatedDeliveryDate.ToShortDateString()</p>
+    <div class="shipment dr">
+        <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+            <h3>Shipment #@shipment.Id</h3>
+            <p>Status: @shipment.Status</p>
+        </a>
         <a asp-page="/ShipmentDetails" asp-route-id="@shipment.Id" class="btn btn-primary">View Details</a>
         @if (shipment.Status.Equals(ShippingStatus.InTransit) || shipment.Status.Equals(ShippingStatus.Delayed) || shipment.Status.Equals(ShippingStatus.Pending))
         {
+            <p>Estimated Delivery: @shipment.EstimatedDeliveryDate.ToShortDateString()</p>
             <form method="post" asp-page-handler="CancelShipment">
                 <input type="hidden" name="ShipmentId" value="@shipment.Id" />
                 <button type="submit" class="btn btn-danger">Cancel Shipment</button>
