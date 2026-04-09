@@ -16,6 +16,12 @@ namespace ImperialIMS.Pages
         public List<Shipment> userShipments { get; set; }
         [BindProperty(SupportsGet = true)]
         public string Id { get; set; }
+        public ShipmentsModel(ILogger<ShipmentsModel> logger, ApplicationUserService applicationUserService, ShipmentService shipmentService)
+        {
+            _logger = logger;
+            _applicationUserService = applicationUserService;
+            _shipmentService = shipmentService;
+        }
         public async Task<IActionResult> OnGetAsync()
         {
             _applicationUser = await _applicationUserService.GetUserAsync(Id);
