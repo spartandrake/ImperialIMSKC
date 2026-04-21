@@ -18,6 +18,7 @@
         public int TrackingId { get; set; }
         public ShippingStatus Status { get; set; }
         public int ApplicationUserId { get; set; }
+        public StorageFacility DeliveryLocation { get; set; }
 
     }
 }

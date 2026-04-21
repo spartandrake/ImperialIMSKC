@@ -18,6 +18,12 @@ namespace ImperialIMS.Pages
         public string CurrentUserId { get; set; }
         public List<Shipment> Shipments { get; set; } = new List<Shipment>();
         public List<Alert> Alerts { get; set; } = new List<Alert>();
+        public IndexModel(ShipmentService shipmentService, ILogger<IndexModel> logger, AlertService alertService)
+        {
+            _shipmentService = shipmentService;
+            _alertService = alertService;
+            _logger = logger;
+        }
         public void OnGet()
         {
             if (User.Identity.IsAuthenticated)

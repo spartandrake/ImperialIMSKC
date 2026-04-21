@@ -34,8 +34,7 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = !builder.Environment.IsDevelopment())
     .AddEntityFrameworkStores<ApplicationDbContext>();
-builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-    .AddCookie(options =>
+builder.Services.ConfigureApplicationCookie(options =>
     {
         options.LoginPath = "/Identity/Account/Login"; // Set your specific login page path
     });
@@ -52,6 +51,7 @@ builder.Services.AddScoped<IRepo<Manifest>, ManifestRepo>();
 builder.Services.AddScoped<IRepo<Shipment>, ShipmentRepo>();
 builder.Services.AddScoped<IRepo<StorageFacility>, StorageFacilityRepo>();
 
+builder.Services.AddScoped<AlertService>();
 builder.Services.AddScoped<ApplicationUserService>();
 builder.Services.AddScoped<CategoryService>();
 builder.Services.AddScoped<InventoryItemService>();
