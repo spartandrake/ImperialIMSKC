@@ -78,6 +78,7 @@ using (var scope = app.Services.CreateScope())
         IConfiguration configuration = serviceProvider.GetRequiredService<IConfiguration>();
 
         await ApplicationUserSeedData.SeedAdminUserAsync(userManager, configuration);
+        await SeedData.SeedAsync(dbContext);
     }
     catch (Exception ex)
     {
