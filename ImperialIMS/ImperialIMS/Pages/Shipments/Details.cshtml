@@ -1,0 +1,96 @@
+@page "{ShipmentId:int}"
+@using ImperialIMS.Models
+@model ImperialIMS.Pages.Shipments.DetailsModel
+@{
+}
+
+<h2>Shipment #@Model.shipment.Id</h2>
+<p>Status: @Model.shipment.Status</p>
+<p>Request Date: @Model.shipment.RequestDate.ToShortDateString()</p>
+<p>Estimated Delivery: @Model.shipment.EstimatedDeliveryDate.ToShortDateString()</p>
+
+@if (Model.shipment.TrackingId != 0)
+{
+    <p>Tracking ID: @Model.shipment.TrackingId</p>
+}
+
+<h3>Manifest</h3>
+@foreach (var manifest in Model.manifests)
+{
+    <div class="manifest dr">
+        <p>Item: @manifest.InventoryItem.Item.Name</p>
+        <p>Quantity: @manifest.amount</p>
+    </div>
+    
+    @if (Model.shipment.Status == ShippingStatus.Pending)
+    {
+        <button type="button" class="btn btn-secondary"
+                data-bs-toggle="modal" data-bs-target="#modifyManifestModal"
+                data-item-name="@manifest.InventoryItem.Item.Name"
+                data-manifest-id="@manifest.Id"
+                data-max-stock="@manifest.InventoryItem.StockCount"
+                onclick="prepareModal(this)">
+            Modify Manifest
+        </button>
+    }
+}
+
+@if (Model.shipment.Status == ShippingStatus.Pending || Model.shipment.Status == ShippingStatus.InTransit || Model.shipment.Status == ShippingStatus.Delayed)
+{
+    <form method="post" asp-page-handler="CancelShipment">
+        <input type="hidden" name="ShipmentId" value="@Model.shipment.Id" />
+        <button type="submit" class="btn btn-danger">Cancel Shipment</button>
+    </form>
+}
+@if (Model.shipment.Status == ShippingStatus.Pending)
+{
+    <form method="post" asp-page-handler="ConfirmShipment">
+        <input type="hidden" name="ShipmentId" value="@Model.shipment.Id" />
+        <button type="submit" class="btn btn-primary">Confirm Shipment</button>
+    </form>
+}
+@if (Model.shipment.Status == ShippingStatus.InTransit)
+{
+    <form method="post" asp-page-handler="ConfirmReceipt">
+        <input type="hidden" name="ShipmentId" value="@Model.shipment.Id" />
+        <button type="submit" class="btn btn-success">Confirm Receipt</button>
+    </form>
+}
+
+<a asp-page="/Shipments" class="btn btn-link">Back to Shipments</a>
+<div class="modal fade" id="modifyManifestModal" tabindex="-1" aria-labelledby="modifyManifestModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modifyManifestModalLabel">Modify Manifest</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form method="post" asp-page-handler="ModifyManifest">
+                <div class="modal-body">
+                    <p>Item: <strong id="modalItemName"></strong></p>
+                    <input type="hidden" asp-for="ManifestId" id="modalManifestId" />
+                    <input type="hidden" asp-for="ShippingId" value="@Model.shipment.Id" />
+                    <div class="mb-3">
+                        <label class="form-label">Quantity</label>
+                        <input asp-for="Quantity" type="number" min="1" id="modalQuantity" class="form-control" />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Add to Shipment</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        function prepareModal(btn) {
+            document.getElementById('modalItemName').textContent = btn.dataset.itemName;
+            document.getElementById('modalManifestId').value = btn.dataset.manifestId;
+            document.getElementById('modalQuantity').max = btn.dataset.maxStock;
+            document.getElementById('modalQuantity').value = 1;
+        }
+    </script>
+}

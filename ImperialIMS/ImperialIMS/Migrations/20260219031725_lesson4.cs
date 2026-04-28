@@ -42,7 +42,7 @@ namespace ImperialIMS.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Shipmetns",
+                name: "Shipments",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
@@ -55,7 +55,7 @@ namespace ImperialIMS.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Shipmetns", x => x.Id);
+                    table.PrimaryKey("PK_Shipments", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -124,9 +124,9 @@ namespace ImperialIMS.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Manifests_Shipmetns_ShippingId",
+                        name: "FK_Manifests_Shipments_ShippingId",
                         column: x => x.ShippingId,
-                        principalTable: "Shipmetns",
+                        principalTable: "Shipments",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -184,9 +184,9 @@ namespace ImperialIMS.Migrations
                         principalTable: "InventoryItems",
                         principalColumn: "Id");
                     table.ForeignKey(
-                        name: "FK_Alerts_Shipmetns_ShipmentId",
+                        name: "FK_Alerts_Shipments_ShipmentId",
                         column: x => x.ShipmentId,
-                        principalTable: "Shipmetns",
+                        principalTable: "Shipments",
                         principalColumn: "Id");
                 });
 
@@ -250,7 +250,7 @@ namespace ImperialIMS.Migrations
                 name: "Categories");
 
             migrationBuilder.DropTable(
-                name: "Shipmetns");
+                name: "Shipments");
 
             migrationBuilder.DropTable(
                 name: "Items");

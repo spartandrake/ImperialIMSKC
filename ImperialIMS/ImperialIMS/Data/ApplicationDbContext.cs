@@ -14,7 +14,7 @@ namespace ImperialIMS.Data
         public DbSet<Item> Items { get; set; }
         public DbSet<ItemCategory> ItemCategories { get; set; }
         public DbSet<Manifest> Manifests { get; set; }
-        public DbSet<Shipment> Shipmetns { get; set; }
+        public DbSet<Shipment> Shipments { get; set; }
         public DbSet<StorageFacility> StorageFacilities { get; set; }
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options, IConfiguration config) : base(options)
         {

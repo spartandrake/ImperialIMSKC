@@ -121,56 +121,58 @@ namespace ImperialIMS.Data
             await db.SaveChangesAsync();
 
             // --- Inventory Items ---
-            db.InventoryItems.AddRange(
-                // Death Star Armory
-                new InventoryItem { ItemId = e11.Id, StorageFacilityId = deathStar.Id, StockCount = 12000, MaxStockLevel = 15000, ReorderLevel = 3000 },
-                new InventoryItem { ItemId = dlt19.Id, StorageFacilityId = deathStar.Id, StockCount = 2400, MaxStockLevel = 3000, ReorderLevel = 600 },
-                new InventoryItem { ItemId = thermal.Id, StorageFacilityId = deathStar.Id, StockCount = 180, MaxStockLevel = 500, ReorderLevel = 100 },
-                new InventoryItem { ItemId = helmet.Id, StorageFacilityId = deathStar.Id, StockCount = 8500, MaxStockLevel = 10000, ReorderLevel = 2000 },
-                new InventoryItem { ItemId = chestPlate.Id, StorageFacilityId = deathStar.Id, StockCount = 8200, MaxStockLevel = 10000, ReorderLevel = 2000 },
-                new InventoryItem { ItemId = reactorCore.Id, StorageFacilityId = deathStar.Id, StockCount = 4, MaxStockLevel = 10, ReorderLevel = 2 },
-                new InventoryItem { ItemId = mouseDroid.Id, StorageFacilityId = deathStar.Id, StockCount = 340, MaxStockLevel = 500, ReorderLevel = 100 },
-                new InventoryItem { ItemId = restraints.Id, StorageFacilityId = deathStar.Id, StockCount = 620, MaxStockLevel = 800, ReorderLevel = 150 },
-                new InventoryItem { ItemId = interoDroid.Id, StorageFacilityId = deathStar.Id, StockCount = 12, MaxStockLevel = 20, ReorderLevel = 5 },
 
-                // Coruscant Imperial Palace Armory
-                new InventoryItem { ItemId = officerUniform.Id, StorageFacilityId = coruscant.Id, StockCount = 3200, MaxStockLevel = 4000, ReorderLevel = 800 },
-                new InventoryItem { ItemId = se14.Id, StorageFacilityId = coruscant.Id, StockCount = 5000, MaxStockLevel = 6000, ReorderLevel = 1200 },
-                new InventoryItem { ItemId = holoproj.Id, StorageFacilityId = coruscant.Id, StockCount = 420, MaxStockLevel = 600, ReorderLevel = 100 },
-                new InventoryItem { ItemId = encTx.Id, StorageFacilityId = coruscant.Id, StockCount = 85, MaxStockLevel = 200, ReorderLevel = 50 },
-                new InventoryItem { ItemId = comlink.Id, StorageFacilityId = coruscant.Id, StockCount = 9800, MaxStockLevel = 12000, ReorderLevel = 2500 },
-                new InventoryItem { ItemId = bactaTank.Id, StorageFacilityId = coruscant.Id, StockCount = 22, MaxStockLevel = 30, ReorderLevel = 8 },
-                new InventoryItem { ItemId = medkit.Id, StorageFacilityId = coruscant.Id, StockCount = 1400, MaxStockLevel = 2000, ReorderLevel = 400 },
+            // Death Star Armory
+            var e11ds = new InventoryItem { ItemId = e11.Id, StorageFacilityId = deathStar.Id, StockCount = 12000, MaxStockLevel = 15000, ReorderLevel = 3000 };
+            var dlt19ds = new InventoryItem { ItemId = dlt19.Id, StorageFacilityId = deathStar.Id, StockCount = 2400, MaxStockLevel = 3000, ReorderLevel = 600 };
+            var thermalDs = new InventoryItem { ItemId = thermal.Id, StorageFacilityId = deathStar.Id, StockCount = 180, MaxStockLevel = 500, ReorderLevel = 100 };
+            var helmetDs = new InventoryItem { ItemId = helmet.Id, StorageFacilityId = deathStar.Id, StockCount = 8500, MaxStockLevel = 10000, ReorderLevel = 2000 };
+            var chestPlateDs = new InventoryItem { ItemId = chestPlate.Id, StorageFacilityId = deathStar.Id, StockCount = 8200, MaxStockLevel = 10000, ReorderLevel = 2000 };
+            var reactorCoreDs = new InventoryItem { ItemId = reactorCore.Id, StorageFacilityId = deathStar.Id, StockCount = 4, MaxStockLevel = 10, ReorderLevel = 2 };
+            var mouseDroidDs = new InventoryItem { ItemId = mouseDroid.Id, StorageFacilityId = deathStar.Id, StockCount = 340, MaxStockLevel = 500, ReorderLevel = 100 };
+            var restraintsDs = new InventoryItem { ItemId = restraints.Id, StorageFacilityId = deathStar.Id, StockCount = 620, MaxStockLevel = 800, ReorderLevel = 150 };
+            var interoDroidDs = new InventoryItem { ItemId = interoDroid.Id, StorageFacilityId = deathStar.Id, StockCount = 12, MaxStockLevel = 20, ReorderLevel = 5 };
 
+            // Coruscant Imperial Palace Armory
+            var officerUniformCs = new InventoryItem { ItemId = officerUniform.Id, StorageFacilityId = coruscant.Id, StockCount = 3200, MaxStockLevel = 4000, ReorderLevel = 800 };
+            var se14Cs = new InventoryItem { ItemId = se14.Id, StorageFacilityId = coruscant.Id, StockCount = 5000, MaxStockLevel = 6000, ReorderLevel = 1200 };
+            var holoprojCs = new InventoryItem { ItemId = holoproj.Id, StorageFacilityId = coruscant.Id, StockCount = 420, MaxStockLevel = 600, ReorderLevel = 100 };
+            var encTxCs = new InventoryItem { ItemId = encTx.Id, StorageFacilityId = coruscant.Id, StockCount = 85, MaxStockLevel = 200, ReorderLevel = 50 };
+            var comlinkCs = new InventoryItem { ItemId = comlink.Id, StorageFacilityId = coruscant.Id, StockCount = 9800, MaxStockLevel = 12000, ReorderLevel = 2500 };
+            var bactaTankCs = new InventoryItem { ItemId = bactaTank.Id, StorageFacilityId = coruscant.Id, StockCount = 22, MaxStockLevel = 30, ReorderLevel = 8 };
+            var medkitCs = new InventoryItem { ItemId = medkit.Id, StorageFacilityId = coruscant.Id, StockCount = 1400, MaxStockLevel = 2000, ReorderLevel = 400 };
                 // Mustafar Imperial Facility
-                new InventoryItem { ItemId = shieldGen.Id, StorageFacilityId = mustafar.Id, StockCount = 7, MaxStockLevel = 20, ReorderLevel = 5 },
-                new InventoryItem { ItemId = powerCell.Id, StorageFacilityId = mustafar.Id, StockCount = 320, MaxStockLevel = 500, ReorderLevel = 80 },
-                new InventoryItem { ItemId = restraints.Id, StorageFacilityId = mustafar.Id, StockCount = 200, MaxStockLevel = 400, ReorderLevel = 80 },
-                new InventoryItem { ItemId = interoDroid.Id, StorageFacilityId = mustafar.Id, StockCount = 3, MaxStockLevel = 10, ReorderLevel = 3 },
+            var shieldGenMf = new InventoryItem { ItemId = shieldGen.Id, StorageFacilityId = mustafar.Id, StockCount = 7, MaxStockLevel = 20, ReorderLevel = 5 };
+            var powerCellMf = new InventoryItem { ItemId = powerCell.Id, StorageFacilityId = mustafar.Id, StockCount = 320, MaxStockLevel = 500, ReorderLevel = 80 };
+            var restraintsMf = new InventoryItem { ItemId = restraints.Id, StorageFacilityId = mustafar.Id, StockCount = 200, MaxStockLevel = 400, ReorderLevel = 80 };
+            var interoDroidMf = new InventoryItem { ItemId = interoDroid.Id, StorageFacilityId = mustafar.Id, StockCount = 3, MaxStockLevel = 10, ReorderLevel = 3 };
 
                 // Scarif Citadel Tower
-                new InventoryItem { ItemId = e11.Id, StorageFacilityId = scarif.Id, StockCount = 6200, MaxStockLevel = 8000, ReorderLevel = 1500 },
-                new InventoryItem { ItemId = ionCannon.Id, StorageFacilityId = scarif.Id, StockCount = 2, MaxStockLevel = 6, ReorderLevel = 2 },
-                new InventoryItem { ItemId = sensorArray.Id, StorageFacilityId = scarif.Id, StockCount = 18, MaxStockLevel = 30, ReorderLevel = 6 },
-                new InventoryItem { ItemId = tieWing.Id, StorageFacilityId = scarif.Id, StockCount = 90, MaxStockLevel = 150, ReorderLevel = 30 },
-                new InventoryItem { ItemId = tieEngine.Id, StorageFacilityId = scarif.Id, StockCount = 55, MaxStockLevel = 150, ReorderLevel = 30 },
-
+            var e11Sc = new InventoryItem { ItemId = e11.Id, StorageFacilityId = scarif.Id, StockCount = 6200, MaxStockLevel = 8000, ReorderLevel = 1500 };
+            var ionCannonSc = new InventoryItem { ItemId = ionCannon.Id, StorageFacilityId = scarif.Id, StockCount = 2, MaxStockLevel = 6, ReorderLevel = 2 };
+            var sensorArraySc = new InventoryItem { ItemId = sensorArray.Id, StorageFacilityId = scarif.Id, StockCount = 18, MaxStockLevel = 30, ReorderLevel = 6 };
+            var tieWingSc = new InventoryItem { ItemId = tieWing.Id, StorageFacilityId = scarif.Id, StockCount = 90, MaxStockLevel = 150, ReorderLevel = 30 };
+            var tieEngineSc = new InventoryItem { ItemId = tieEngine.Id, StorageFacilityId = scarif.Id, StockCount = 55, MaxStockLevel = 150, ReorderLevel = 30 };
                 // Endor Shield Bunker
-                new InventoryItem { ItemId = snowtrooper.Id, StorageFacilityId = endor.Id, StockCount = 400, MaxStockLevel = 600, ReorderLevel = 120 },
-                new InventoryItem { ItemId = e11.Id, StorageFacilityId = endor.Id, StockCount = 1800, MaxStockLevel = 3000, ReorderLevel = 600 },
-                new InventoryItem { ItemId = comlink.Id, StorageFacilityId = endor.Id, StockCount = 1100, MaxStockLevel = 2000, ReorderLevel = 400 },
-                new InventoryItem { ItemId = medkit.Id, StorageFacilityId = endor.Id, StockCount = 210, MaxStockLevel = 500, ReorderLevel = 100 },
-                new InventoryItem { ItemId = stimpack.Id, StorageFacilityId = endor.Id, StockCount = 75, MaxStockLevel = 300, ReorderLevel = 80 },
-
+            var snowtrooperEndor = new InventoryItem { ItemId = snowtrooper.Id, StorageFacilityId = endor.Id, StockCount = 400, MaxStockLevel = 600, ReorderLevel = 120 };
+            var e11Endor = new InventoryItem { ItemId = e11.Id, StorageFacilityId = endor.Id, StockCount = 1800, MaxStockLevel = 3000, ReorderLevel = 600 };
+            var comlinkEndor = new InventoryItem { ItemId = comlink.Id, StorageFacilityId = endor.Id, StockCount = 1100, MaxStockLevel = 2000, ReorderLevel = 400 };
+            var medkitEndor = new InventoryItem { ItemId = medkit.Id, StorageFacilityId = endor.Id, StockCount = 210, MaxStockLevel = 500, ReorderLevel = 100 };
+            var stimpackEndor = new InventoryItem { ItemId = stimpack.Id, StorageFacilityId = endor.Id, StockCount = 75, MaxStockLevel = 300, ReorderLevel = 80 };
                 // Executor Supply Bay
-                new InventoryItem { ItemId = pilotSuit.Id, StorageFacilityId = executor.Id, StockCount = 1200, MaxStockLevel = 1500, ReorderLevel = 300 },
-                new InventoryItem { ItemId = tieWing.Id, StorageFacilityId = executor.Id, StockCount = 240, MaxStockLevel = 400, ReorderLevel = 80 },
-                new InventoryItem { ItemId = tieEngine.Id, StorageFacilityId = executor.Id, StockCount = 190, MaxStockLevel = 400, ReorderLevel = 80 },
-                new InventoryItem { ItemId = atatLeg.Id, StorageFacilityId = executor.Id, StockCount = 16, MaxStockLevel = 40, ReorderLevel = 10 },
-                new InventoryItem { ItemId = atatSt.Id, StorageFacilityId = executor.Id, StockCount = 6, MaxStockLevel = 20, ReorderLevel = 5 },
-                new InventoryItem { ItemId = shuttleGear.Id, StorageFacilityId = executor.Id, StockCount = 30, MaxStockLevel = 60, ReorderLevel = 12 },
-                new InventoryItem { ItemId = shieldGen.Id, StorageFacilityId = executor.Id, StockCount = 3, MaxStockLevel = 15, ReorderLevel = 4 }
-            );
+            var pilotSuitExecutor = new InventoryItem { ItemId = pilotSuit.Id, StorageFacilityId = executor.Id, StockCount = 1200, MaxStockLevel = 1500, ReorderLevel = 300 };
+            var tieWingExecutor = new InventoryItem { ItemId = tieWing.Id, StorageFacilityId = executor.Id, StockCount = 240, MaxStockLevel = 400, ReorderLevel = 80 };
+            var tieEngineExecutor = new InventoryItem { ItemId = tieEngine.Id, StorageFacilityId = executor.Id, StockCount = 190, MaxStockLevel = 400, ReorderLevel = 80 };
+            var atatLegExecutor = new InventoryItem { ItemId = atatLeg.Id, StorageFacilityId = executor.Id, StockCount = 16, MaxStockLevel = 40, ReorderLevel = 10 };
+            var atatStExecutor = new InventoryItem { ItemId = atatSt.Id, StorageFacilityId = executor.Id, StockCount = 6, MaxStockLevel = 20, ReorderLevel = 5 };
+            var shuttleGearExecutor = new InventoryItem { ItemId = shuttleGear.Id, StorageFacilityId = executor.Id, StockCount = 30, MaxStockLevel = 60, ReorderLevel = 12 };
+            var shieldGenExecutor = new InventoryItem { ItemId = shieldGen.Id, StorageFacilityId = executor.Id, StockCount = 3, MaxStockLevel = 15, ReorderLevel = 4 };
+            db.InventoryItems.AddRange(e11ds, dlt19ds, thermalDs, helmetDs, chestPlateDs, reactorCoreDs, mouseDroidDs, restraintsDs, interoDroidDs);
+            db.InventoryItems.AddRange(officerUniformCs, se14Cs, holoprojCs, encTxCs, comlinkCs, bactaTankCs, medkitCs);
+            db.InventoryItems.AddRange(shieldGenMf, powerCellMf, restraintsMf, interoDroidMf);
+            db.InventoryItems.AddRange(e11Sc, ionCannonSc, sensorArraySc, tieWingSc, tieEngineSc);
+            db.InventoryItems.AddRange(snowtrooperEndor, e11Endor, comlinkEndor, medkitEndor, stimpackEndor);
+            db.InventoryItems.AddRange(pilotSuitExecutor, tieWingExecutor, tieEngineExecutor, atatLegExecutor, atatStExecutor, shuttleGearExecutor, shieldGenExecutor);
             await db.SaveChangesAsync();
 
             // --- Shipments ---
@@ -181,7 +183,7 @@ namespace ImperialIMS.Data
                 ReceivedDate = new DateTime(2026, 3, 10),
                 TrackingId = 77001,
                 Status = ShippingStatus.Delivered,
-                ApplicationUserId = 1,
+                ApplicationUserId = "807240fd-ef7e-4ece-9ae5-649985e1c3a8",
                 DeliveryLocation = deathStar
             };
             var shipment2 = new Shipment
@@ -191,7 +193,7 @@ namespace ImperialIMS.Data
                 ReceivedDate = default,
                 TrackingId = 77002,
                 Status = ShippingStatus.InTransit,
-                ApplicationUserId = 1,
+                ApplicationUserId = "807240fd-ef7e-4ece-9ae5-649985e1c3a8",
                 DeliveryLocation = executor
             };
             var shipment3 = new Shipment
@@ -201,7 +203,7 @@ namespace ImperialIMS.Data
                 ReceivedDate = default,
                 TrackingId = 77003,
                 Status = ShippingStatus.Delayed,
-                ApplicationUserId = 1,
+                ApplicationUserId = "807240fd-ef7e-4ece-9ae5-649985e1c3a8",
                 DeliveryLocation = endor
             };
             var shipment4 = new Shipment
@@ -211,7 +213,7 @@ namespace ImperialIMS.Data
                 ReceivedDate = default,
                 TrackingId = 77004,
                 Status = ShippingStatus.Pending,
-                ApplicationUserId = 1,
+                ApplicationUserId = "807240fd-ef7e-4ece-9ae5-649985e1c3a8",
                 DeliveryLocation = scarif
             };
             var shipment5 = new Shipment
@@ -221,39 +223,39 @@ namespace ImperialIMS.Data
                 ReceivedDate = default,
                 TrackingId = 77005,
                 Status = ShippingStatus.Lost,
-                ApplicationUserId = 1,
+                ApplicationUserId = "807240fd-ef7e-4ece-9ae5-649985e1c3a8",
                 DeliveryLocation = mustafar
             };
 
-            db.Shipmetns.AddRange(shipment1, shipment2, shipment3, shipment4, shipment5);
+            db.Shipments.AddRange(shipment1, shipment2, shipment3, shipment4, shipment5);
             await db.SaveChangesAsync();
 
             // --- Manifests ---
             db.Manifests.AddRange(
                 // Shipment 1 — delivered to Death Star
-                new Manifest { ItemId = e11.Id, ShippingId = shipment1.Id, amount = 500 },
-                new Manifest { ItemId = helmet.Id, ShippingId = shipment1.Id, amount = 300 },
-                new Manifest { ItemId = chestPlate.Id, ShippingId = shipment1.Id, amount = 300 },
-                new Manifest { ItemId = mouseDroid.Id, ShippingId = shipment1.Id, amount = 40 },
+                new Manifest { InventoryItemId = e11ds.Id, ShippingId = shipment1.Id, amount = 500 },
+                new Manifest { InventoryItemId = helmetDs.Id, ShippingId = shipment1.Id, amount = 300 },
+                new Manifest { InventoryItemId = chestPlateDs.Id, ShippingId = shipment1.Id, amount = 300 },
+                new Manifest { InventoryItemId = mouseDroidDs.Id, ShippingId = shipment1.Id, amount = 40 },
 
                 // Shipment 2 — in transit to Executor
-                new Manifest { ItemId = tieWing.Id, ShippingId = shipment2.Id, amount = 60 },
-                new Manifest { ItemId = tieEngine.Id, ShippingId = shipment2.Id, amount = 60 },
-                new Manifest { ItemId = pilotSuit.Id, ShippingId = shipment2.Id, amount = 100 },
+                new Manifest { InventoryItemId = tieWingSc.Id, ShippingId = shipment2.Id, amount = 60 },
+                new Manifest { InventoryItemId = tieEngineSc.Id, ShippingId = shipment2.Id, amount = 60 },
+                new Manifest { InventoryItemId = pilotSuitExecutor.Id, ShippingId = shipment2.Id, amount = 100 },
 
                 // Shipment 3 — delayed to Endor
-                new Manifest { ItemId = snowtrooper.Id, ShippingId = shipment3.Id, amount = 120 },
-                new Manifest { ItemId = stimpack.Id, ShippingId = shipment3.Id, amount = 200 },
-                new Manifest { ItemId = medkit.Id, ShippingId = shipment3.Id, amount = 150 },
+                new Manifest { InventoryItemId = snowtrooperEndor.Id, ShippingId = shipment3.Id, amount = 120 },
+                new Manifest { InventoryItemId = stimpackEndor.Id, ShippingId = shipment3.Id, amount = 200 },
+                new Manifest { InventoryItemId = medkitEndor.Id, ShippingId = shipment3.Id, amount = 150 },
 
                 // Shipment 4 — pending to Scarif
-                new Manifest { ItemId = sensorArray.Id, ShippingId = shipment4.Id, amount = 8 },
-                new Manifest { ItemId = ionCannon.Id, ShippingId = shipment4.Id, amount = 2 },
-                new Manifest { ItemId = e11.Id, ShippingId = shipment4.Id, amount = 800 },
+                new Manifest { InventoryItemId = sensorArraySc.Id, ShippingId = shipment4.Id, amount = 8 },
+                new Manifest { InventoryItemId = ionCannonSc.Id, ShippingId = shipment4.Id, amount = 2 },
+                new Manifest { InventoryItemId = e11Sc.Id, ShippingId = shipment4.Id, amount = 800 },
 
                 // Shipment 5 — lost (Mustafar)
-                new Manifest { ItemId = reactorCore.Id, ShippingId = shipment5.Id, amount = 3 },
-                new Manifest { ItemId = shieldGen.Id, ShippingId = shipment5.Id, amount = 5 }
+                new Manifest { InventoryItemId = reactorCoreDs.Id, ShippingId = shipment5.Id, amount = 3 },
+                new Manifest { InventoryItemId = shieldGenMf.Id, ShippingId = shipment5.Id, amount = 5 }
             );
             await db.SaveChangesAsync();
 

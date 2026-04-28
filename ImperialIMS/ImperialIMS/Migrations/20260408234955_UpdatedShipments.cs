@@ -13,7 +13,7 @@ namespace ImperialIMS.Migrations
         {
             migrationBuilder.AddColumn<DateTime>(
                 name: "EstimatedDeliveryDate",
-                table: "Shipmetns",
+                table: "Shipments",
                 type: "TEXT",
                 nullable: false,
                 defaultValue: new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified));
@@ -24,7 +24,7 @@ namespace ImperialIMS.Migrations
         {
             migrationBuilder.DropColumn(
                 name: "EstimatedDeliveryDate",
-                table: "Shipmetns");
+                table: "Shipments");
         }
     }
 }

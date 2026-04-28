@@ -12,7 +12,7 @@ namespace ImperialIMS.Migrations
         {
             migrationBuilder.AddColumn<int>(
                 name: "ApplicationUserId",
-                table: "Shipmetns",
+                table: "Shipments",
                 type: "INTEGER",
                 nullable: false,
                 defaultValue: 0);
@@ -30,7 +30,7 @@ namespace ImperialIMS.Migrations
         {
             migrationBuilder.DropColumn(
                 name: "ApplicationUserId",
-                table: "Shipmetns");
+                table: "Shipments");
 
             migrationBuilder.DropColumn(
                 name: "ApplicationUserId",

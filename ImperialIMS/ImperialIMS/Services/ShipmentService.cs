@@ -1,5 +1,4 @@
-﻿
-using ImperialIMS.Models;
+﻿using ImperialIMS.Models;
 using ImperialIMS.Repos;
 
 namespace ImperialIMS.Services
@@ -17,7 +16,30 @@ namespace ImperialIMS.Services
         }
         public List<Shipment> GetAllForUser(string userid)
         {
-            return _repo.Search().Where(s => s.ApplicationUserId.ToString() == userid).ToList();
+            return _repo.Search().Where(s => s.ApplicationUserId == userid).ToList();
+        }
+        public Shipment CreateShipmentForUser(string userId)
+        {
+            //need to verify that there is no pending shipment for this user before we create a new one
+            
+            var shipment = _repo.Search()
+                .Where(s => s.ApplicationUserId == userId && s.Status == ShippingStatus.Pending)
+                .FirstOrDefault();
+            if (shipment != null) 
+            {
+                return shipment;
+            }
+            var newShipment = new Shipment
+            {
+                ApplicationUserId = userId,
+                RequestDate = DateTime.UtcNow,
+                Status = ShippingStatus.Pending,
+                EstimatedDeliveryDate = DateTime.UtcNow.AddDays(7)
+            };
+            _repo.Add(newShipment);
+            _repo.SaveChanges();
+            _logger.LogInformation("Created new shipment with Id {ShipmentId} for user {UserId}.", newShipment.Id, newShipment.ApplicationUserId);
+            return newShipment;
         }
         public void MarkShipmentAsReceived(int shipmentId)
         {
@@ -28,6 +50,7 @@ namespace ImperialIMS.Services
                 return;
             }
             shipment.ReceivedDate = DateTime.UtcNow;
+            shipment.Status = ShippingStatus.Delivered;
             _repo.Update(shipment);
             _repo.SaveChanges();
             _logger.LogInformation("Marked shipment with Id {ShipmentId} as received.", shipmentId);
@@ -42,6 +65,7 @@ namespace ImperialIMS.Services
             }
             shipment.RequestDate = DateTime.UtcNow;
             shipment.TrackingId = trackingId;
+            shipment.Status = ShippingStatus.InTransit;
             _repo.Update(shipment);
             _repo.SaveChanges();
             _logger.LogInformation("Marked shipment with Id {ShipmentId} as in transit.", shipmentId);

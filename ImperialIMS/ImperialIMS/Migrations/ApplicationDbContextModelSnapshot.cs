@@ -252,10 +252,10 @@ namespace ImperialIMS.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<bool>("IsDeleted")
+                    b.Property<int>("InventoryItemId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("ItemId")
+                    b.Property<bool>("IsDeleted")
                         .HasColumnType("INTEGER");
 
                     b.Property<int>("ShippingId")
@@ -270,7 +270,7 @@ namespace ImperialIMS.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ItemId");
+                    b.HasIndex("InventoryItemId");
 
                     b.HasIndex("ShippingId");
 
@@ -283,10 +283,11 @@ namespace ImperialIMS.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("ApplicationUserId")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("ApplicationUserId")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
 
-                    b.Property<int>("DeliveryLocationId")
+                    b.Property<int?>("DeliveryLocationId")
                         .HasColumnType("INTEGER");
 
                     b.Property<DateTime>("EstimatedDeliveryDate")
@@ -315,7 +316,7 @@ namespace ImperialIMS.Migrations
 
                     b.HasIndex("DeliveryLocationId");
 
-                    b.ToTable("Shipmetns");
+                    b.ToTable("Shipments");
                 });
 
             modelBuilder.Entity("ImperialIMS.Models.StorageFacility", b =>
@@ -531,9 +532,9 @@ namespace ImperialIMS.Migrations
 
             modelBuilder.Entity("ImperialIMS.Models.Manifest", b =>
                 {
-                    b.HasOne("ImperialIMS.Models.Item", "Item")
+                    b.HasOne("ImperialIMS.Models.InventoryItem", "InventoryItem")
                         .WithMany()
-                        .HasForeignKey("ItemId")
+                        .HasForeignKey("InventoryItemId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -543,7 +544,7 @@ namespace ImperialIMS.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Item");
+                    b.Navigation("InventoryItem");
 
                     b.Navigation("Shipment");
                 });
@@ -552,9 +553,7 @@ namespace ImperialIMS.Migrations
                 {
                     b.HasOne("ImperialIMS.Models.StorageFacility", "DeliveryLocation")
                         .WithMany()
-                        .HasForeignKey("DeliveryLocationId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("DeliveryLocationId");
 
                     b.Navigation("DeliveryLocation");
                 });

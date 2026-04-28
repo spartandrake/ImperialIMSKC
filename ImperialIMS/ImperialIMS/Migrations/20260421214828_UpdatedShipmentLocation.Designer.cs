@@ -318,7 +318,7 @@ namespace ImperialIMS.Migrations
 
                     b.HasIndex("DeliveryLocationId");
 
-                    b.ToTable("Shipmetns");
+                    b.ToTable("Shipments");
                 });
 
             modelBuilder.Entity("ImperialIMS.Models.StorageFacility", b =>

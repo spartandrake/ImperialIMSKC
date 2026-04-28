@@ -1,44 +1,14 @@
-﻿@page "{Id?}"
+@page
 @using ImperialIMS.Models
 @model ImperialIMS.Pages.ShipmentsModel
 @{
 }
-Display a list of shipments for the current user
-Clicking on a shipment should show the details of that shipment, including the items included in the shipment and their quantities
-If the shipment is in progress or pending, allow the user to cancel the shipment or modify
-If the shipment is in transit or delivered, show the tracking information and estimated delivery date
-If the shipment is delivered, allow the user to confirm receipt of the shipment
-If the shipment is completed show the shipment details and grey out the entry
+
 @foreach (var shipment in Model.userShipments)
 {
     <div class="shipment dr">
-        <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-            <h3>Shipment #@shipment.Id</h3>
-            <p>Status: @shipment.Status</p>
-        </a>
-        <a asp-page="/ShipmentDetails" asp-route-id="@shipment.Id" class="btn btn-primary">View Details</a>
-        @if (shipment.Status.Equals(ShippingStatus.InTransit) || shipment.Status.Equals(ShippingStatus.Delayed) || shipment.Status.Equals(ShippingStatus.Pending))
-        {
-            <p>Estimated Delivery: @shipment.EstimatedDeliveryDate.ToShortDateString()</p>
-            <form method="post" asp-page-handler="CancelShipment">
-                <input type="hidden" name="ShipmentId" value="@shipment.Id" />
-                <button type="submit" class="btn btn-danger">Cancel Shipment</button>
-            </form>
-            <form method="post" asp-page-handler="ModifyShipment">
-                <input type="hidden" name="ShipmentId" value="@shipment.Id" />
-                <button type="submit" class="btn btn-secondary">Modify Shipment</button>
-            </form>
-        }
-        else if (shipment.Status.Equals(ShippingStatus.InTransit) || shipment.Status.Equals(ShippingStatus.Delivered) || shipment.Status.Equals(ShippingStatus.Delayed))
-        {
-            <p>Tracking Information: @shipment.TrackingId</p>
-            @if (shipment.Status.Equals(ShippingStatus.Delivered))
-            {
-                <form method="post" asp-page-handler="ConfirmReceipt">
-                    <input type="hidden" name="ShipmentId" value="@shipment.Id" />
-                    <button type="submit" class="btn btn-success">Confirm Receipt</button>
-                </form>
-            }
-        }
+        <h3>Shipment #@shipment.Id</h3>
+        <p>Status: @shipment.Status</p>
+        <a asp-page="/Shipments/Details" asp-route-ShipmentId="@shipment.Id" class="btn btn-primary">View Details</a>
     </div>
 }

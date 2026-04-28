@@ -43,10 +43,12 @@ builder.Services.ConfigureApplicationCookie(options =>
 builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddRazorPages();
+
 builder.Services.AddScoped<IRepo<Alert>, AlertRepo>();
 builder.Services.AddScoped<IRepo<Category>, CategoryRepo>();
 builder.Services.AddScoped<IRepo<InventoryItem>, InventoryItemRepo>();
 builder.Services.AddScoped<IRepo<Item>, ItemRepo>();
+builder.Services.AddScoped<IRepo<ItemCategory>, ItemCategoryRepo>();
 builder.Services.AddScoped<IRepo<Manifest>, ManifestRepo>();
 builder.Services.AddScoped<IRepo<Shipment>, ShipmentRepo>();
 builder.Services.AddScoped<IRepo<StorageFacility>, StorageFacilityRepo>();

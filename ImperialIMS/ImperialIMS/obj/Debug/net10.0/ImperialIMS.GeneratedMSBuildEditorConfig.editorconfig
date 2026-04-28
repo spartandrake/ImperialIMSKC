@@ -90,10 +90,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/smart/source/repos/ImperialIMSKC/ImperialIMS/ImperialIMS/Pages/Manifest.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWFuaWZlc3QuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/smart/source/repos/ImperialIMSKC/ImperialIMS/ImperialIMS/Pages/Search.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2VhcmNoLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -108,6 +104,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/smart/source/repos/ImperialIMSKC/ImperialIMS/ImperialIMS/Pages/Shipments.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hpcG1lbnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/smart/source/repos/ImperialIMSKC/ImperialIMS/ImperialIMS/Pages/Shipments/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hpcG1lbnRzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/smart/source/repos/ImperialIMSKC/ImperialIMS/ImperialIMS/Pages/_ViewImports.cshtml]

@@ -310,7 +310,7 @@ namespace ImperialIMS.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Shipmetns");
+                    b.ToTable("Shipments");
                 });
 
             modelBuilder.Entity("ImperialIMS.Models.StorageFacility", b =>

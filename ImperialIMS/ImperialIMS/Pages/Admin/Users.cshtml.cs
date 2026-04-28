@@ -15,6 +15,11 @@ namespace ImperialIMS.Pages.Admin
         public string Id { get; set; }
         public List<ApplicationUser> Users { get; set; } 
         public String[] Roles { get; } = new String[] { "Admin", "Manager", "Auditor", "Default" };
+        public UsersModel(ILogger<UsersModel> logger, ApplicationUserService applicationUserService)
+        {
+            _logger = logger;
+            _applicationUserService = applicationUserService;
+        }
         public async Task<IActionResult> OnGetAsync()
         {
             _applicationUser = await _applicationUserService.GetUserAsync(Id);

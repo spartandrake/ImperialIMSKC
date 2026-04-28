@@ -1,6 +1,6 @@
 using ImperialIMS.Models;
-using ImperialIMS.Pages.Admin;
 using ImperialIMS.Services;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -9,23 +9,19 @@ namespace ImperialIMS.Pages
     public class ShipmentsModel : PageModel
     {
         private readonly ILogger<ShipmentsModel> _logger;
-
-        private readonly ApplicationUserService _applicationUserService;
+        private readonly UserManager<ApplicationUser> _userManager;
         private readonly ShipmentService _shipmentService;
-        private ApplicationUser _applicationUser { get; set; }
         public List<Shipment> userShipments { get; set; }
-        [BindProperty(SupportsGet = true)]
-        public string Id { get; set; }
-        public ShipmentsModel(ILogger<ShipmentsModel> logger, ApplicationUserService applicationUserService, ShipmentService shipmentService)
+        public ShipmentsModel(ILogger<ShipmentsModel> logger, ShipmentService shipmentService, UserManager<ApplicationUser> userManager)
         {
             _logger = logger;
-            _applicationUserService = applicationUserService;
+            _userManager = userManager;
             _shipmentService = shipmentService;
         }
         public async Task<IActionResult> OnGetAsync()
         {
-            _applicationUser = await _applicationUserService.GetUserAsync(Id);
-            userShipments = _shipmentService.GetAllForUser(Id);
+            var userId = _userManager.GetUserId(User);
+            userShipments = _shipmentService.GetAllForUser(userId);
             return Page();
         }
     }

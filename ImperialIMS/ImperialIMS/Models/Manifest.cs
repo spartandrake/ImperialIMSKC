@@ -4,9 +4,9 @@ namespace ImperialIMS.Models
 {
     public class Manifest : EntityBase
     {
-        [ForeignKey("Item")]
-        public int ItemId { get; set; }
-        public Item Item { get; set; }
+        [ForeignKey("InventoryItem")]
+        public int InventoryItemId { get; set; }
+        public InventoryItem InventoryItem { get; set; }
         [ForeignKey("Shipment")]
         public int ShippingId { get; set; }
         public Shipment Shipment { get; set; }

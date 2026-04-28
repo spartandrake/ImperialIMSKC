@@ -26,14 +26,26 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Search">Search</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Manifest">Manifest</a>
-                        </li>
                         <li class="navbar-collapse collapse">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Shipments">Shipments</a>
                         </li>
                         <li class="navbar-collapse collapse">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Account">Account</a>
+                        </li>
+                        <li>
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Admin
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                    <li><a class="nav-link text-dark" asp-area="" asp-page="/Admin/Inventory">Inventory</a></li>
+                                    <li><a class="nav-link text-dark" asp-area="" asp-page="/Admin/Item">Item</a></li>
+                                    <li><a class="nav-link text-dark" asp-area="" asp-page="/Admin/RecycleBin">Recycle Bin</a></li>
+                                    <li><a class="nav-link text-dark" asp-area="" asp-page="/Admin/StorageFacility">Storage Facility</a></li>
+                                    <li><a class="nav-link text-dark" asp-area="" asp-page="/Admin/Users">Users</a></li>
+                                    
+                                </ul>
+                            </div>
                         </li>
                     </ul>
                     <partial name="_LoginPartial" />

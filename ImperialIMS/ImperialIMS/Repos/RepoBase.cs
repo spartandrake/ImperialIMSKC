@@ -23,9 +23,9 @@ namespace ImperialIMS.Repos
             Table = Db.Set<T>();
         }
 
-        protected RepoBase(DbContextOptions<ApplicationDbContext> options, IConfiguration config)
+        protected RepoBase(DbContextOptions<ApplicationDbContext> options, IConfiguration config, ApplicationDbContext db)
         {
-            Db = new ApplicationDbContext(options, config);
+            Db = db;
             Table = Db.Set<T>();
         }
 
