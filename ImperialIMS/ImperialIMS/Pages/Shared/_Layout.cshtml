@@ -9,56 +9,54 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/ImperialIMS.styles.css" asp-append-version="true" />
 </head>
-<body class="character-morph-animation d-flex">
-    <nav class=" navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-        <div class="container">
-            <a class="navbar-brand" asp-area="" asp-page="/Index">ImperialIMS</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        </div>
-        <partial name="_LoginPartial" />
-    </nav>
-    <nav class="navbar navbar-light bg-white border-end box-shadow flex-column align-items-start p-3" style="width: 200px; min-height: 100vh;">
-                
-        <ul class="navbar-nav flex-column w-100">
-            <li class="nav-item">
-                <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-dark" asp-area="" asp-page="/Search">Search</a>
-            </li>
-            <li class="navbar-collapse collapse">
-                <a class="nav-link text-dark" asp-area="" asp-page="/Shipments">Shipments</a>
-            </li>
-            <li class="navbar-collapse collapse">
-                <a class="nav-link text-dark" asp-area="" asp-page="/Account">Account</a>
-            </li>
-            <li>
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                        Admin
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="nav-link text-dark" asp-area="" asp-page="/Admin/Inventory">Inventory</a></li>
-                        <li><a class="nav-link text-dark" asp-area="" asp-page="/Admin/Item">Item</a></li>
-                        <li><a class="nav-link text-dark" asp-area="" asp-page="/Admin/RecycleBin">Recycle Bin</a></li>
-                        <li><a class="nav-link text-dark" asp-area="" asp-page="/Admin/StorageFacility">Storage Facility</a></li>
-                        <li><a class="nav-link text-dark" asp-area="" asp-page="/Admin/Users">Users</a></li>
-                                    
-                    </ul>
-                </div>
-            </li>
-        </ul>
-    </nav>
+<body class="character-morph-animation d-flex flex-column">
     <div class="tv">
         <canvas id="tv" width="1280" height="720"></canvas>
     </div>
-    <div class="flex-grow-1 p-3">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
+    <nav class="navbar-expand navbar navbar-light bgCoruscantBlue border-bottom box-shadow ">
+        <div class="container-fluid">
+            <a class="navbar-brand" asp-area="" asp-page="/Index">ImperialIMS</a>
+        </div>
+        <partial name="_LoginPartial" />
+    </nav>
+    <div class="d-flex flex-grow-1">
+        <nav class="navbar border-end  flex-column align-items-start p-3 bgCoruscantBlue" style="width: 200px; min-height: 100vh;">
+            <ul class="navbar-nav flex-column w-100">
+                <li class="nav-item">
+                    <a class="nav-link text-light" asp-area="" asp-page="/Index">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" asp-area="" asp-page="/Search">Search</a>
+                </li>
+                <li class="navbar-collapse collapse">
+                    <a class="nav-link text-light" asp-area="" asp-page="/Shipments">Shipments</a>
+                </li>
+                <li class="navbar-collapse collapse">
+                    <a class="nav-link text-light" asp-area="" asp-page="/Account">Account</a>
+                </li>
+                <li>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                            Admin
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="nav-link text-dark" asp-area="" asp-page="/Admin/Inventory">Inventory</a></li>
+                            <li><a class="nav-link text-dark" asp-area="" asp-page="/Admin/Item">Item</a></li>
+                            <li><a class="nav-link text-dark" asp-area="" asp-page="/Admin/RecycleBin">Recycle Bin</a></li>
+                            <li><a class="nav-link text-dark" asp-area="" asp-page="/Admin/StorageFacility">Storage Facility</a></li>
+                            <li><a class="nav-link text-dark" asp-area="" asp-page="/Admin/Users">Users</a></li>
+                                    
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <div class="flex-grow-1 p-3">
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
+        </div>
+        
     </div>
 
     
