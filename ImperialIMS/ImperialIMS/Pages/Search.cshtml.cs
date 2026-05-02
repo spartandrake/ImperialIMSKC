@@ -5,6 +5,7 @@ using ImperialIMS.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ImperialIMS.Pages
 {
@@ -65,9 +66,12 @@ namespace ImperialIMS.Pages
             LoadFilterData();
             Results = BuildResults();
         }
-
         public IActionResult OnPostAddToShipment()
         {
+            if(!User.Identity.IsAuthenticated)
+            {
+                return Challenge();
+            }
             var inventoryItem = _inventoryItemService.Get(AddInventoryItemId);
             if (inventoryItem.Id == 0 || AddQuantity <= 0)
                 return RedirectToPage();
