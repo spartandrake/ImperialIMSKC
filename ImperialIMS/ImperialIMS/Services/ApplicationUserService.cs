@@ -28,18 +28,13 @@ namespace ImperialIMS.Services
         }
         public async Task<bool> IsAdminAsync(String UserId)
         {
-            if (!user.Id.Equals(UserId))
-            {
-                user = await GetUserAsync(UserId);
-            }
-            foreach (var claim in await GetApplicationClaimsAsync(UserId))
-            {
-                if (claim.Type.Equals(PolicyTypes.IsAdmin))
-                {
-                    return Boolean.Parse(claim.Value);
-                }
-            }
-            return false;
+            var role = await GetUserRoleAsync(UserId);
+            return role.Equals(PolicyValues.Admin);
+        }
+        public async Task<String> GetUserRoleAsync(String UserId)
+        {
+            var claims = await GetApplicationClaimsAsync(UserId);
+            return claims.Where(c => c.Type.Equals(PolicyTypes.Role)).Select(c => c.Value).FirstOrDefault() ?? PolicyValues.Default;
         }
         public async Task<List<Claim>> GetApplicationClaimsAsync(String UserId)
         {
@@ -50,47 +45,28 @@ namespace ImperialIMS.Services
             claims = (List<Claim>)await _userManager.GetClaimsAsync(user);
             return claims;
         }
-        public async Task UpsertUserClaimsAsync(String UserId, String Type, String Value)
+        public async Task SetUserRoleAsync(string UserId, string Role)
         {
-            Claim? Claim;
-            try
-            {
-                //to add a new claim just add a new or statement for the policy type
-                if (Type.Equals(PolicyTypes.IsAdmin) || Type.Equals(PolicyTypes.IsOfficer) || Type.Equals(PolicyTypes.IsManager) || Type.Equals(PolicyTypes.IsDefault))
-                {
-                    Claim = new Claim(Type, Value);
-                }
-                else throw new InvalidOperationException("This is an invalid claim for this application.");
-                if (UserId != null || UserId != "" && Claim != null)
-                {
-                    if (!user.Id.Equals(UserId))
-                    {
-                        user = await GetUserAsync(UserId);
-                    }
-                    foreach (Claim claim in await GetApplicationClaimsAsync(UserId))
-                    {
-                        if (claim.Type.Equals(Claim.Type))
-                        {
-                            await _userManager.RemoveClaimAsync(user, claim);
-                            break;
-                        }
-                    }
-                    IdentityResult result = await _userManager.AddClaimAsync(user, Claim);
-                    if (result.Succeeded)
-                    {
-                        _logger.LogInformation("Added Claim " + Claim.Type + " with value " + Claim.Value + " to user " + UserId);
-                    }
-                    else
-                    {
-                        _logger.LogError("Failed to add Claim " + Claim.Type + " with value " + Claim.Value + " to user " + UserId);
-                        throw new InvalidOperationException("Failed to add Claim " + Claim.Type + " with value " + Claim.Value + " to user " + UserId);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex.Message);
-            }
+            if (!user.Id.Equals(UserId))
+                user = await GetUserAsync(UserId);
+
+            var existing = (await GetApplicationClaimsAsync(UserId))
+                .FirstOrDefault(c => c.Type == PolicyTypes.Role);
+
+            if (existing != null)
+                await _userManager.RemoveClaimAsync(user, existing);
+
+            var result = await _userManager.AddClaimAsync(user, new Claim(PolicyTypes.Role, Role));
+            if (result.Succeeded)
+                _logger.LogInformation("Set Role={Role} for user {UserId}", Role, UserId);
+            else
+                _logger.LogError("Failed to set Role={Role} for user {UserId}", Role, UserId);
+        }
+        public async Task InvalidateUserSessionAsync(string UserId)
+        {
+            var targetUser = await GetUserAsync(UserId);
+            if (targetUser != null)
+                await _userManager.UpdateSecurityStampAsync(targetUser);
         }
     }
 }

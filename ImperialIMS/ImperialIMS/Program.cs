@@ -38,12 +38,13 @@ builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.R
 builder.Services.AddAuthorization(options =>
 {
     options.AddPolicy("AdminOnly", policy =>
-        policy.RequireClaim(PolicyTypes.IsAdmin, PolicyValues.True));
+        policy.RequireClaim(PolicyTypes.Role, PolicyValues.Admin));
 
-    options.AddPolicy("OfficerOrAdmin", policy =>
+    options.AddPolicy("OfficerOrAbove", policy =>
         policy.RequireAssertion(ctx =>
-            ctx.User.HasClaim(PolicyTypes.IsAdmin, PolicyValues.True) ||
-            ctx.User.HasClaim(PolicyTypes.IsOfficer, PolicyValues.True)));
+            ctx.User.HasClaim(PolicyTypes.Role, PolicyValues.Admin) ||
+            ctx.User.HasClaim(PolicyTypes.Role, PolicyValues.Manager) ||
+            ctx.User.HasClaim(PolicyTypes.Role, PolicyValues.Officer)));
 });
 builder.Services.ConfigureApplicationCookie(options =>
     {

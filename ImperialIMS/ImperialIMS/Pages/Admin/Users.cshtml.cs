@@ -18,8 +18,10 @@ namespace ImperialIMS.Pages.Admin
         public string Id { get; set; }
         [BindProperty]
         public string NewRole { get; set; }
-        public List<ApplicationUser> Users { get; set; } 
-        public String[] Roles { get; } = new String[] { "Admin", "Manager", "Officer", "Default" };
+        public List<ApplicationUser> Users { get; set; }
+        public string[] Roles { get; } = [PolicyValues.Admin, PolicyValues.Manager, PolicyValues.Auditor, PolicyValues.Default];
+        public Dictionary<string, string> UserRoles { get; set; } = new();
+
         public UsersModel(ILogger<UsersModel> logger, ApplicationUserService applicationUserService)
         {
             _logger = logger;
@@ -30,24 +32,20 @@ namespace ImperialIMS.Pages.Admin
             _applicationUser = await _applicationUserService.GetUserAsync(Id);
             Users = _applicationUserService.GetAllUsers();
             Users.Remove(_applicationUser);
+
+            foreach (var user in Users)
+                UserRoles[user.Id] = await _applicationUserService.GetUserRoleAsync(user.Id);
+
             return Page();
         }
-        public async Task<IActionResult> OnPostChangeRoleAsync() 
+
+        public async Task<IActionResult> OnPostChangeRoleAsync()
         {
             if (string.IsNullOrEmpty(Id) || string.IsNullOrEmpty(NewRole))
-            {
                 return RedirectToPage();
-            }
-            //this feels too tightly coupled, but it works for now. If we add more roles, we'll need to update this switch statement.
-            (string Type, string Value) = NewRole switch
-            {
-                "Admin" => (PolicyTypes.IsAdmin, "true"),
-                "Manager" => (PolicyTypes.IsManager, "true"),
-                "Officer" => (PolicyTypes.IsOfficer, "true"),
-                "Default" => (PolicyTypes.IsDefault, "true"),
-                _ => throw new ArgumentException("Invalid role selected.")
-            };
-            await _applicationUserService.UpsertUserClaimsAsync(Id, Type, Value);
+
+            await _applicationUserService.SetUserRoleAsync(Id, NewRole);
+            await _applicationUserService.InvalidateUserSessionAsync(Id);
             return RedirectToPage();
         }
     }

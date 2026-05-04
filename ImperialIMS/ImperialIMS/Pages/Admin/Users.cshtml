@@ -12,7 +12,7 @@
                 <form method="post" asp-page-handler="ChangeRole">
                     <input type="hidden" name="UserId" value="@user.Id" />
                     <select name="NewRole" class="form-select">
-                        <option value="">-- Select a new role --</option>
+                        <option value="">Change Role from @Model.UserRoles[user.Id]</option>
                         @foreach (var role in Model.Roles)
                         {
                             <option value="@role">@role</option>

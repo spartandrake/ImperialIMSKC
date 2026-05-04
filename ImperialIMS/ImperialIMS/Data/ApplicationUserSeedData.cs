@@ -9,8 +9,7 @@ namespace ImperialIMS.Data
     {
         public static async Task SeedAdminUserAsync(UserManager<ApplicationUser> userManager, IConfiguration config)
         {
-            Claim adminClaim = new Claim(PolicyTypes.IsAdmin, PolicyValues.True);
-            Claim moderatorClaim = new Claim(PolicyTypes.IsOfficer, PolicyValues.False);
+            Claim adminClaim = new Claim(PolicyTypes.Role, PolicyValues.Admin);
             String adminUserName = config.GetSection("AdminUser")["Email"] ?? String.Empty;
             String adminPass = config.GetSection("AdminUser")["Password"] ?? String.Empty;
             try
@@ -33,7 +32,7 @@ namespace ImperialIMS.Data
 
                     adminUser = await userManager.FindByNameAsync(adminUserName);
 
-                    await userManager.AddClaimsAsync(adminUser, [adminClaim, moderatorClaim]);
+                    await userManager.AddClaimsAsync(adminUser, [adminClaim]);
                 }
             }
             catch (Exception ex)

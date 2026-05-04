@@ -124,9 +124,8 @@ namespace ImperialIMS.Areas.Identity.Pages.Account
 
                     var userId = await _userManager.GetUserIdAsync(user);
                     ApplicationUser newUser = await _userManager.FindByIdAsync(userId);
-                    Claim adminClaim = new Claim(PolicyTypes.IsAdmin, PolicyValues.False);
-                    Claim officerClaim = new Claim(PolicyTypes.IsOfficer, PolicyValues.False);
-                    await _userManager.AddClaimsAsync(newUser, [adminClaim, officerClaim]);
+                    Claim defaultClaim = new Claim(PolicyTypes.Role, PolicyValues.Default);
+                    await _userManager.AddClaimsAsync(newUser, [defaultClaim]);
 
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                     code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
