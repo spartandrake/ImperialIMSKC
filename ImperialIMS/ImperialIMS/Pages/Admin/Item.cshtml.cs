@@ -9,6 +9,7 @@ using System.Security.Claims;
 
 namespace ImperialIMS.Pages.Admin
 {
+    //[Authorize(Policy = "AdminOnly")]
     public class ItemModel : PageModel
     {
         private ItemService _service { get; set; }

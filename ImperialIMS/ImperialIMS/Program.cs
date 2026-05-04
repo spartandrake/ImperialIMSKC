@@ -1,4 +1,5 @@
 using ImperialIMS.Data;
+using ImperialIMS.Helpers;
 using ImperialIMS.Models;
 using ImperialIMS.Repos;
 using ImperialIMS.Services;
@@ -34,6 +35,16 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = !builder.Environment.IsDevelopment())
     .AddEntityFrameworkStores<ApplicationDbContext>();
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("AdminOnly", policy =>
+        policy.RequireClaim(PolicyTypes.IsAdmin, PolicyValues.True));
+
+    options.AddPolicy("OfficerOrAdmin", policy =>
+        policy.RequireAssertion(ctx =>
+            ctx.User.HasClaim(PolicyTypes.IsAdmin, PolicyValues.True) ||
+            ctx.User.HasClaim(PolicyTypes.IsOfficer, PolicyValues.True)));
+});
 builder.Services.ConfigureApplicationCookie(options =>
     {
         options.LoginPath = "/Identity/Account/Login"; // Set your specific login page path

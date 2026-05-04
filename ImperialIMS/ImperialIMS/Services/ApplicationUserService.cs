@@ -55,7 +55,8 @@ namespace ImperialIMS.Services
             Claim? Claim;
             try
             {
-                if (Type.Equals(PolicyTypes.IsAdmin) || Type.Equals(PolicyTypes.IsOfficer))
+                //to add a new claim just add a new or statement for the policy type
+                if (Type.Equals(PolicyTypes.IsAdmin) || Type.Equals(PolicyTypes.IsOfficer) || Type.Equals(PolicyTypes.IsManager) || Type.Equals(PolicyTypes.IsDefault))
                 {
                     Claim = new Claim(Type, Value);
                 }

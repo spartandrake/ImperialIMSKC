@@ -2,12 +2,14 @@ using ImperialIMS.Models;
 using ImperialIMS.Repos;
 using ImperialIMS.Services;
 using ImperialIMS.ViewModel;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Serilog;
 
 namespace ImperialIMS.Pages.Admin
 {
+    //[Authorize(Policy = "AdminOnly")]
     public class InventoryModel : PageModel
     {
         public List<StorageFacility> StorageFacilities { get; set; } = new List<StorageFacility>();
