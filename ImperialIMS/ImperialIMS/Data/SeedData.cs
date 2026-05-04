@@ -272,42 +272,42 @@ namespace ImperialIMS.Data
                     Message = "TIE Fighter Ion Engine stock at Scarif is critically low (55 units). Reorder threshold is 30.",
                     alertType = AlertType.LowStock,
                     InventoryItemId = lowTieEngine.Id,
-                    ApplicationUserId = 1
+                    ApplicationUserId = "807240fd-ef7e-4ece-9ae5-649985e1c3a8"
                 },
                 new Alert
                 {
                     Message = "Deflector Shield Generator stock at Mustafar Facility is below reorder level (7 of 5 threshold).",
                     alertType = AlertType.LowStock,
                     InventoryItemId = lowShieldMustafar.Id,
-                    ApplicationUserId = 1
+                    ApplicationUserId = "807240fd-ef7e-4ece-9ae5-649985e1c3a8"
                 },
                 new Alert
                 {
                     Message = "Stimpack Injector stock at Endor Shield Bunker is critically low (75 units, threshold 80). Combat readiness at risk.",
                     alertType = AlertType.LowStock,
                     InventoryItemId = lowStimEndor.Id,
-                    ApplicationUserId = 1
+                    ApplicationUserId = "807240fd-ef7e-4ece-9ae5-649985e1c3a8"
                 },
                 new Alert
                 {
                     Message = "Hypermatter Reactor Core supply at Death Star Armory approaching minimum (4 units). Lord Vader has been informed.",
                     alertType = AlertType.LowStock,
                     InventoryItemId = lowReactor.Id,
-                    ApplicationUserId = 1
+                    ApplicationUserId = "807240fd-ef7e-4ece-9ae5-649985e1c3a8"
                 },
                 new Alert
                 {
                     Message = "Shipment #77003 to Endor Shield Bunker is delayed. Snowtrooper reinforcement timeline compromised.",
                     alertType = AlertType.Delay,
                     ShipmentId = shipment3.Id,
-                    ApplicationUserId = 1
+                    ApplicationUserId = "807240fd-ef7e-4ece-9ae5-649985e1c3a8"
                 },
                 new Alert
                 {
                     Message = "Shipment #77005 to Mustafar has been marked LOST. Hypermatter cores unaccounted for. Imperial Security Bureau notified.",
                     alertType = AlertType.Delay,
                     ShipmentId = shipment5.Id,
-                    ApplicationUserId = 1
+                    ApplicationUserId = "807240fd-ef7e-4ece-9ae5-649985e1c3a8"
                 }
             );
             await db.SaveChangesAsync();

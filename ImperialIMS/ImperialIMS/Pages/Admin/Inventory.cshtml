@@ -2,30 +2,35 @@
 @model ImperialIMS.Pages.Admin.InventoryModel
 @{
 }
-<form id="form" method="post" onsubmit="handleSubmit()">
-    <div class="DropdownItem">
-        <select asp-for="selectedItemId" id="selectedStorageFacility" class="form-select">
-            <option value="">-- Select an item --</option>
-            @foreach (var item in Model.Items)
-            {
-                <option value="@item.Id">@item.Name</option>
-            }
-        </select>
-    </div>
-    <div class="DropdownStorageFacility">
-        <label for="selectedStorageFacilityId">Select a storage facility:</label>
-        <select asp-for="selectedStorageFacilityId" id="selectedStorageFacility" class="form-select">
-            <option value="">-- Select Storage Facility --</option>
-            @foreach (var sf in Model.StorageFacilities)
-            {
-                <option value="@sf.Id">
-                    @sf.Name
-                </option>
-            }
-        </select>
-    </div>
-    <div class="ChooseQuantity">
-            <input asp-for="InventoryQuantity" type="number" id="quantityInput" class="form-control" placeholder="Enter quantity" />
-    </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+<div class="container">
+    <form id="form" method="post" onsubmit="handleSubmit()">
+        <div class="DropdownItem">
+            <h1>INVENTORY ITEMS</h1>
+            <label>Select an item:</label>
+            <select asp-for="selectedItemId" id="selectedStorageFacility" class="form-select">
+                <option value="">-- Select an item --</option>
+                @foreach (var item in Model.Items)
+                {
+                    <option value="@item.Id">@item.Name</option>
+                }
+            </select>
+        </div>
+        <div class="DropdownStorageFacility">
+            <label for="selectedStorageFacilityId">Select a storage facility:</label>
+            <select asp-for="selectedStorageFacilityId" id="selectedStorageFacility" class="form-select">
+                <option value="">-- Select Storage Facility --</option>
+                @foreach (var sf in Model.StorageFacilities)
+                {
+                    <option value="@sf.Id">
+                        @sf.Name
+                    </option>
+                }
+            </select>
+        </div>
+        <div class="ChooseQuantity">
+            <label>Choose added quantity:</label>
+                <input asp-for="InventoryQuantity" type="number" id="quantityInput" class="form-control" placeholder="Enter quantity" />
+        </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>

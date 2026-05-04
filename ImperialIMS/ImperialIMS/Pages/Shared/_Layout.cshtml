@@ -9,18 +9,18 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/ImperialIMS.styles.css" asp-append-version="true" />
 </head>
-<body class="character-morph-animation d-flex flex-column">
+<body class="character-morph-animation d-flex flex-column" style="min-height: 100vh;">
     <div class="tv">
         <canvas id="tv" width="1280" height="720"></canvas>
     </div>
     <nav class="navbar-expand navbar navbar-light bgCoruscantBlue border-bottom box-shadow ">
         <div class="container-fluid">
-            <a class="navbar-brand" asp-area="" asp-page="/Index">ImperialIMS</a>
+            <a class="navbar-brand text-light" asp-area="" asp-page="/Index">ImperialIMS</a>
         </div>
         <partial name="_LoginPartial" />
     </nav>
     <div class="d-flex flex-grow-1">
-        <nav class="navbar border-end  flex-column align-items-start p-3 bgCoruscantBlue" style="width: 200px; min-height: 100vh;">
+        <nav class="navbar border-end  flex-column align-items-start p-3 bgCoruscantBlue" style="width: 200px; align-self: stretch;">
             <ul class="navbar-nav flex-column w-100">
                 <li class="nav-item">
                     <a class="nav-link text-light" asp-area="" asp-page="/Index">Home</a>

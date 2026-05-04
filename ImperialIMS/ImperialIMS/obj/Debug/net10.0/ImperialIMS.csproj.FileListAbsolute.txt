@@ -338,7 +338,6 @@ C:\Users\smart\source\repos\ImperialIMSKC\ImperialIMS\ImperialIMS\obj\Debug\net1
 C:\Users\smart\source\repos\ImperialIMSKC\ImperialIMS\ImperialIMS\obj\Debug\net10.0\compressed\qcovel0jwr-{0}-jjsuc0puko-jjsuc0puko.gz
 C:\Users\smart\source\repos\ImperialIMSKC\ImperialIMS\ImperialIMS\obj\Debug\net10.0\compressed\pehwsftvza-{0}-9vr69e8ynj-9vr69e8ynj.gz
 C:\Users\smart\source\repos\ImperialIMSKC\ImperialIMS\ImperialIMS\obj\Debug\net10.0\compressed\83qkbcx1q5-{0}-maizb3dk6l-maizb3dk6l.gz
-C:\Users\smart\source\repos\ImperialIMSKC\ImperialIMS\ImperialIMS\obj\Debug\net10.0\compressed\eo78c4mjl1-{0}-9gt7e8hyni-9gt7e8hyni.gz
 C:\Users\smart\source\repos\ImperialIMSKC\ImperialIMS\ImperialIMS\bin\Debug\net10.0\System.Web.Mvc.dll
 C:\Users\smart\source\repos\ImperialIMSKC\ImperialIMS\ImperialIMS\bin\Debug\net10.0\System.Web.Razor.dll
 C:\Users\smart\source\repos\ImperialIMSKC\ImperialIMS\ImperialIMS\bin\Debug\net10.0\System.Web.Helpers.dll
@@ -346,4 +345,5 @@ C:\Users\smart\source\repos\ImperialIMSKC\ImperialIMS\ImperialIMS\bin\Debug\net1
 C:\Users\smart\source\repos\ImperialIMSKC\ImperialIMS\ImperialIMS\bin\Debug\net10.0\System.Web.WebPages.Razor.dll
 C:\Users\smart\source\repos\ImperialIMSKC\ImperialIMS\ImperialIMS\bin\Debug\net10.0\System.Web.WebPages.dll
 C:\Users\smart\source\repos\ImperialIMSKC\ImperialIMS\ImperialIMS\bin\Debug\net10.0\Microsoft.Web.Infrastructure.dll
+C:\Users\smart\source\repos\ImperialIMSKC\ImperialIMS\ImperialIMS\obj\Debug\net10.0\compressed\eo78c4mjl1-{0}-77wwhia70t-77wwhia70t.gz
 C:\Users\smart\source\repos\ImperialIMSKC\ImperialIMS\ImperialIMS\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt

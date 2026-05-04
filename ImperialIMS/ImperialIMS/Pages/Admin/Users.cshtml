@@ -2,10 +2,8 @@
 @model ImperialIMS.Pages.Admin.UsersModel
 @{
 }
-Show all users and their current roles
-Have a drop down to change the role of each user
-Submit button at the bottom
 <div class="container">
+    <h1>Current Users</h1>
     <div id="users">
         @foreach (var user in Model.Users)
         {

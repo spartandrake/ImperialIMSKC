@@ -17,6 +17,6 @@ namespace ImperialIMS.Models
         [ForeignKey("Shipment")]
         public int? ShipmentId { get; set; }
         public Shipment? Shipment { get; set; }
-        public int ApplicationUserId { get; set; }
+        public string ApplicationUserId { get; set; }
     }
 }

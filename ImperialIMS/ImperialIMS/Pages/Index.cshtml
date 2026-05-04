@@ -8,25 +8,48 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
     @if (SignInManager.IsSignedIn(User))
     {
-        <p>Welcome back, @User.Identity?.Name!</p>
+        <p>@User.Identity?.Name COMMAND CENTER</p>
+        <div class="d-flex gap-3 justify-content-center mb-4">
+            <div class="border rounded p-3" style="min-width: 150px">
+                Active Shipments: 
+                <div class="fs-3 fw-bold">
+                    @Model.Shipments.Count()
+                </div>
+            </div>
+            <div class="border rounded p-3" style="min-width: 150px">
+                Critical Alerts: 
+                <div class="fs-3 fw-bold">
+                    @Model.Alerts.Count()
+                </div>
+            </div>
+        </div>
+        <div class="row mt-2 text-start">
+            <div class="col-md-6">
+                Active Alerts
+                @foreach (var alert in Model.Alerts)
+                {
+                    <div class="alert alert-info" role="alert">
+                        @alert.Message
+                    </div>
+                }
+            </div>
+            <div class="col-md-6">
+                Recent Shipments
+                @foreach (var shipment in Model.Shipments)
+                {
+                    <div class="alert alert-danger" role="alert">
+                        Shipment: @shipment.Id - Status:@shipment.Status
+                    </div>
+                }
+            </div>
+        </div>
+        
     }
     else
     {
         <p>The Empire needs <a asp-area="Identity" asp-page="/Account/Login">YOU!</a> <a asp-area="Identity" asp-page="/Account/Register">Enlist Today!</a>.</p>
     }
-    @foreach (var alert in Model.Alerts)
-    {
-        <div class="alert alert-info" role="alert">
-            @alert.Message
-        </div>
-    }
-    @foreach (var shipment in Model.Shipments)
-    {
-        <div class="alert alert-danger" role="alert">
-            @shipment.Id - @shipment.TrackingId - @shipment.Status
-        </div>
-    }
+    
 </div>

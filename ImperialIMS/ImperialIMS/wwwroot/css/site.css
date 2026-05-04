@@ -18,10 +18,9 @@ html {
 }
 
 body {
-    margin-bottom: 60px;
     color: #fff;
     text-transform: uppercase;
-    text-shadow: 0 0 .625em #fff, 0 0 1.5625em #fff, -.0625em 0 .125em rgba(0, 0, 0, 0.5);
+    text-shadow: 0 0 .625em #BC1E22, 0 0 1.5625em #BC1E22, -.0625em 0 .125em rgba(0, 0, 0, 0.5);
 }
 
 .form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
@@ -29,10 +28,27 @@ body {
   text-align: end;
 }
 .bgCoruscantBlue {
-  background-color:#394A59 
+    background-color: #394A59;
+    border-color: #BC1E22 !important;
 }
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
-  text-align: start;
+    text-align: start;
+}
+.form-control,
+.form-select {
+    background-color: #64696C;
+    color: #FFFFFF;
+    border-color: #BC1E22;
+}
+.form-select option {
+    background-color: #64696C;
+    color: #FFFFFF;
+}
+
+.form-control:focus,
+.form-select:focus {
+    background-color: #64696C;
+    color: #FFFFFF;
 }
 .tv {
     position: fixed;
@@ -40,7 +56,7 @@ body {
     width: 100%;
     z-index: -1;
 }
-    .tv canvas {
-        height: 100%;
-        width: 100%;
-    }
+.tv canvas {
+    height: 100%;
+    width: 100%;
+}

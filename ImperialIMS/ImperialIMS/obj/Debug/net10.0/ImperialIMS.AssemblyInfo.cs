@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ImperialIMS")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7484e1f3d9a473d5a6b435cedd3461b4726b06ac")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+56f417a7f8fc469982135aa00742deb8b60335fe")]
 [assembly: System.Reflection.AssemblyProductAttribute("ImperialIMS")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ImperialIMS")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
