@@ -54,6 +54,21 @@
                     </div>
                 </li>                
                 }
+                @if ((await AuthorizationService.AuthorizeAsync(User, "OfficerOrAbove")).Succeeded)
+                {
+                    <li>
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="reportsDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                Reports
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="reportsDropdown">
+                                <li><a class="nav-link text-dark" asp-area="" asp-page="/Admin/Reports/InventoryChanges">Inventory Changes</a></li>
+                                @*<li><a class="nav-link text-dark" asp-area="" asp-page="/Admin/Reports/ShipmentHistory">Shipment History</a></li>
+                                <li><a class="nav-link text-dark" asp-area="" asp-page="/Admin/Reports/UserActivity">User Activity</a></li>*@
+                            </ul>
+                        </div>
+                    </li>
+                }
                 </ul>
         </nav>
         <div class="flex-grow-1 p-3">

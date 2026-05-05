@@ -18,6 +18,32 @@ namespace ImperialIMS.Services
             _logger = logger;
             _configuration = configuration;
         }
+        public new void Update(InventoryItem value)
+        {
+            try
+            {
+                var old = _repo.Find(value.Id);
+                if (old.StockCount != value.StockCount)
+                {
+                    var historyRecord = new InventoryHistory
+                    {
+                        InventoryItemId = value.Id,
+                        OldStock = old.StockCount,
+                        NewStock = value.StockCount,
+                        ChangeReason = value.StockCount > old.StockCount ? "Increment" : "Decrement",
+                        ChangedAt = DateTime.UtcNow
+                    };
+                    _history.Add(historyRecord);
+                    _logger.LogInformation("Recorded inventory history for {ItemName}: change of {ChangeAmount} on {ChangeDate}.", historyRecord.InventoryItem.Item.Name, historyRecord.NewStock - historyRecord.OldStock, historyRecord.ChangedAt);
+                }
+                _repo.Update(value);
+                _repo.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Error updating value with Id {Id}. " + ex.Message, value.Id);
+            }
+        }
         public void UpdateStock(int itemId, int quantity, bool isIncrement)
         {
             var item = _repo.Find(itemId);
@@ -47,7 +73,7 @@ namespace ImperialIMS.Services
                     ChangedAt = DateTime.UtcNow
                 };
                 _history.Add(historyRecord);
-                _logger.LogInformation("Recorded inventory history for {ItemName}: change of {ChangeAmount} on {ChangeDate}.", item.Item.Name, historyRecord.ChangeAmount, historyRecord.ChangeDate);
+                _logger.LogInformation("Recorded inventory history for {ItemName}: change of {ChangeAmount} on {ChangeDate}.", item.Item.Name, historyRecord.NewStock - historyRecord.OldStock,  historyRecord.ChangedAt);
             }
         }
         private void DecrementStock(InventoryItem item, int quantity)

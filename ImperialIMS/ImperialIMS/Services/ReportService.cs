@@ -38,7 +38,7 @@ namespace ImperialIMS.Services
             var inventoryItems = _inventoryItemRepo.Search(ii => ii.StorageFacilityId == storageFacilityId).ToList();
             return inventoryItems.Select(item => new InventoryItemWithHistory
             {
-                InventoryItem = _inventoryItemRepo.Find(item.InventoryItem.Id),
+                InventoryItem = item,
                 ItemName = _itemRepo.Find(item.ItemId).Name,
                 History = _inventoryHistoryRepo.Search(ih => ih.InventoryItemId == item.Id && ih.ChangedAt >= from && ih.ChangedAt <= to)
                 .OrderByDescending(ih => ih.ChangedAt).ToList()

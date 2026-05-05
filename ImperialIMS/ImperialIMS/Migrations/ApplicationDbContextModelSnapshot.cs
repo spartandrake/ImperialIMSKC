@@ -156,6 +156,42 @@ namespace ImperialIMS.Migrations
                     b.ToTable("Categories");
                 });
 
+            modelBuilder.Entity("ImperialIMS.Models.InventoryHistory", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("ChangeReason")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("ChangedAt")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("InventoryItemId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("NewStock")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("OldStock")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<long>("TimeStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("InventoryItemId");
+
+                    b.ToTable("InventoryHistory");
+                });
+
             modelBuilder.Entity("ImperialIMS.Models.InventoryItem", b =>
                 {
                     b.Property<int>("Id")
@@ -491,6 +527,17 @@ namespace ImperialIMS.Migrations
                     b.Navigation("InventoryItem");
 
                     b.Navigation("Shipment");
+                });
+
+            modelBuilder.Entity("ImperialIMS.Models.InventoryHistory", b =>
+                {
+                    b.HasOne("ImperialIMS.Models.InventoryItem", "InventoryItem")
+                        .WithMany()
+                        .HasForeignKey("InventoryItemId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("InventoryItem");
                 });
 
             modelBuilder.Entity("ImperialIMS.Models.InventoryItem", b =>
