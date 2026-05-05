@@ -3,3 +3,27 @@
 @{
 }
 Show a list of all deleted items, with options to restore or permanently delete each item.
+<table class="table">
+    <thead>
+        <tr>
+            <th>Item Name</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.DeletedItems)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>
+                    <form method="post" asp-page-handler="Restore" asp-route-id="@item.Id" style="display:inline;">
+                        <button type="submit" class="btn btn-success">Restore</button>
+                    </form>
+                    <form method="post" asp-page-handler="PermanentDelete" asp-route-id="@item.Id" style="display:inline;"
+                        onsubmit="return confirm('Permanently delete @item.Name? This cannot be undone.')">
+                        <button type="submit" class="btn btn-danger">Delete Permanently</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>

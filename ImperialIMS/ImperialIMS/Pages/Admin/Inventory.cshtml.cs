@@ -42,9 +42,15 @@ namespace ImperialIMS.Pages.Admin
         {
             if (id != null) 
             { 
+                var existingInv = _inventoryService.Get((int)id);
                 EditId = (int)id;
-                Items = new List<Item> { _itemService.Get(_inventoryService.Get((int)id).ItemId) };
-                StorageFacilities = new List<StorageFacility> { _storageService.Get(_inventoryService.Get((int)id).StorageFacilityId) };
+                selectedItemId = existingInv.ItemId;
+                selectedStorageFacilityId = existingInv.StorageFacilityId;
+                InventoryQuantity = existingInv.StockCount;
+                MaxStockLevel = existingInv.MaxStockLevel;
+                ReorderLevel = existingInv.ReorderLevel;
+                Items = new List<Item> { _itemService.Get(existingInv.ItemId) };
+                StorageFacilities = new List<StorageFacility> { _storageService.Get(existingInv.StorageFacilityId) };
             }
             else 
             {
@@ -106,12 +112,13 @@ namespace ImperialIMS.Pages.Admin
             {
                 _log.LogError("Error posting inventory update." + ex.Message);
             }
-            return RedirectToPage();
+            return RedirectToPage("/Admin/Inventory", new { id = (int?)null});
         }
         public IActionResult OnPostDelete(int id)
         {
             _inventoryService.Delete(id);
-            return RedirectToPage();
+            _log.LogInformation("Deleted inventory item with Id: {id}", id);
+            return RedirectToPage("/Admin/Inventory", new { id = (int?)null });
         }
     }
 }

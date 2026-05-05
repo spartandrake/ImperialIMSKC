@@ -66,6 +66,7 @@ namespace ImperialIMS.Pages.Admin
                         NewItem.Name = Item.Name;
                         NewItem.Description = Item.Description;
                         _service.Add(NewItem);
+                        _log.LogInformation("Created new Item with id of {id}", NewItem.Id);
                     }
                 }
                 else

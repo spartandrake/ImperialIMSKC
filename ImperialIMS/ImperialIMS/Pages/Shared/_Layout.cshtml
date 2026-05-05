@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Authorization
+@inject IAuthorizationService AuthorizationService
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -34,6 +36,8 @@
                 <li class="navbar-collapse collapse">
                     <a class="nav-link text-light" asp-area="" asp-page="/Account">Account</a>
                 </li>
+                @if ((await AuthorizationService.AuthorizeAsync(User, "AdminOnly")).Succeeded)
+                {
                 <li>
                     <div class="dropdown">
                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
@@ -48,8 +52,9 @@
                                     
                         </ul>
                     </div>
-                </li>
-            </ul>
+                </li>                
+                }
+                </ul>
         </nav>
         <div class="flex-grow-1 p-3">
             <main role="main" class="pb-3">

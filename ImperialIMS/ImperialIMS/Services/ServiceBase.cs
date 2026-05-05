@@ -38,7 +38,6 @@ namespace ImperialIMS.Services
                 if (_values != null) { _values.Clear(); }
                 else { _values = new List<T>(); }
                 _values.AddRange(_repo.Search(x => !x.IsDeleted));
-                _repo.SaveChanges();
             }
             catch (Exception ex)
             {
@@ -50,9 +49,9 @@ namespace ImperialIMS.Services
         {
             try
             {
-                _values.Clear();
+                if(_values != null) { _values.Clear(); }
+                else { _values = new List<T>(); }
                 _values.AddRange(_repo.Search(x => x.IsDeleted));
-                _repo.SaveChanges();
             }
             catch (Exception ex)
             {
