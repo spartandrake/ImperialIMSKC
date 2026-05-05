@@ -24,6 +24,13 @@ namespace ImperialIMS.Pages.Admin
         public int selectedStorageFacilityId { get; set; }
         [BindProperty]
         public int InventoryQuantity { get; set; }
+        [BindProperty]
+        public int MaxStockLevel { get; set; }
+        [BindProperty]
+        public int ReorderLevel { get; set; }
+        [BindProperty]
+        public int EditId { get; set; }
+        public List<(InventoryItem inv, string itemName, string facilityName)> AllInventory { get; set; } = new();
         public InventoryModel(ItemService itemService, StorageFacilityService storageFacilityService, InventoryItemService inventoryItemService, ILogger<InventoryModel> logger)
         {
             _itemService = itemService;
@@ -35,11 +42,18 @@ namespace ImperialIMS.Pages.Admin
         {
             if (id != null) 
             { 
+                EditId = (int)id;
                 Items = new List<Item> { _itemService.Get(_inventoryService.Get((int)id).ItemId) };
                 StorageFacilities = new List<StorageFacility> { _storageService.Get(_inventoryService.Get((int)id).StorageFacilityId) };
             }
             else 
             {
+                var allInv = _inventoryService.GetAll();
+                AllInventory = allInv.Select(i => (
+                    i,
+                    _itemService.Get(i.ItemId)?.Name ?? "Unknown",
+                    _storageService.Get(i.StorageFacilityId)?.Name ?? "Unknown"
+                )).ToList();
                 Items = _itemService.GetAll();
                 StorageFacilities = _storageService.GetAll();
             }
@@ -52,14 +66,28 @@ namespace ImperialIMS.Pages.Admin
             {
                 if (ModelState.IsValid)
                 {
+
                     _log.LogInformation("Selected Item Id: {itemId}, Selected Storage Facility Id: {storageId}, Inventory Quantity: {quantity}", selectedItemId, selectedStorageFacilityId, InventoryQuantity);
-                    if (selectedItemId != 0 && selectedStorageFacilityId != 0)
+                    if (EditId != 0)
+                    {
+                        InventoryItem inventoryItem = _inventoryService.Get(EditId);
+                        inventoryItem.ItemId = selectedItemId;
+                        inventoryItem.StorageFacilityId = selectedStorageFacilityId;
+                        inventoryItem.StockCount = InventoryQuantity;
+                        inventoryItem.MaxStockLevel = MaxStockLevel;
+                        inventoryItem.ReorderLevel = ReorderLevel;
+                        _inventoryService.Update(inventoryItem);
+                        _log.LogInformation("Updated inventory item with Id: {id} to Item Id: {itemId}, Storage Facility Id: {storageId} with quantity: {quantity}", EditId, selectedItemId, selectedStorageFacilityId, InventoryQuantity);
+                    }
+                    else if (selectedItemId != 0 && selectedStorageFacilityId != 0)
                     {
                         InventoryItem inventoryItem = new InventoryItem
                         {
                             ItemId = selectedItemId,
                             StorageFacilityId = selectedStorageFacilityId,
-                            StockCount = InventoryQuantity
+                            StockCount = InventoryQuantity,
+                            MaxStockLevel = MaxStockLevel,
+                            ReorderLevel = ReorderLevel
                         };
                         _inventoryService.Add(inventoryItem);
                         _log.LogInformation("Added inventory item with Item Id: {itemId} to Storage Facility Id: {storageId} with quantity: {quantity}", selectedItemId, selectedStorageFacilityId, InventoryQuantity);
@@ -78,7 +106,12 @@ namespace ImperialIMS.Pages.Admin
             {
                 _log.LogError("Error posting inventory update." + ex.Message);
             }
-            return Page();
+            return RedirectToPage();
+        }
+        public IActionResult OnPostDelete(int id)
+        {
+            _inventoryService.Delete(id);
+            return RedirectToPage();
         }
     }
 }

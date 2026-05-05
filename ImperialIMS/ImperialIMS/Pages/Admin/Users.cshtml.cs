@@ -11,11 +11,13 @@ namespace ImperialIMS.Pages.Admin
     public class UsersModel : PageModel
     {
         private readonly ILogger<UsersModel> _logger;
-        
+
         private readonly ApplicationUserService _applicationUserService;
         private ApplicationUser _applicationUser { get; set; }
         [BindProperty(SupportsGet = true)]
         public string Id { get; set; }
+        [BindProperty]
+        public string UserId { get; set; }
         [BindProperty]
         public string NewRole { get; set; }
         public List<ApplicationUser> Users { get; set; }
@@ -29,7 +31,7 @@ namespace ImperialIMS.Pages.Admin
         }
         public async Task<IActionResult> OnGetAsync()
         {
-            _applicationUser = await _applicationUserService.GetUserAsync(Id);
+            _applicationUser = await _applicationUserService.GetUserAsync(UserId);
             Users = _applicationUserService.GetAllUsers();
             Users.Remove(_applicationUser);
 
@@ -41,11 +43,11 @@ namespace ImperialIMS.Pages.Admin
 
         public async Task<IActionResult> OnPostChangeRoleAsync()
         {
-            if (string.IsNullOrEmpty(Id) || string.IsNullOrEmpty(NewRole))
+            if (string.IsNullOrEmpty(UserId) || string.IsNullOrEmpty(NewRole))
                 return RedirectToPage();
 
-            await _applicationUserService.SetUserRoleAsync(Id, NewRole);
-            await _applicationUserService.InvalidateUserSessionAsync(Id);
+            await _applicationUserService.SetUserRoleAsync(UserId, NewRole);
+            await _applicationUserService.InvalidateUserSessionAsync(UserId);
             return RedirectToPage();
         }
     }

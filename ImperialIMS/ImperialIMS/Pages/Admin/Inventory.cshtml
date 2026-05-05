@@ -31,6 +31,35 @@
             <label>Choose added quantity:</label>
                 <input asp-for="InventoryQuantity" type="number" id="quantityInput" class="form-control" placeholder="Enter quantity" />
         </div>
+        <div class="ChooseMaxStockLevel">
+            <label>Choose max stock level:</label>
+            <input asp-for="MaxStockLevel" type="number" id="maxStockLevelInput" class="form-control" placeholder="Enter max stock level" />
+        </div>
+        <div class="ChooseReorderLevel">
+            <label>Choose reorder level:</label>
+            <input asp-for="ReorderLevel" type="number" id="reorderLevelInput" class="form-control" placeholder="Enter reorder level" />
+        </div>
             <button type="submit" class="btn btn-primary">Submit</button>
+        <input type="hidden" asp-for="EditId" />
     </form>
+    <table class="table">
+        <tr><th>Name</th><th>Description</th><th>Stock</th><th>Max Stock</th><th>Reorder Level</th><th>Actions</th></tr>
+        @foreach (var item in Model.AllInventory)
+        {
+            <tr>
+                <td>@item.itemName</td>
+                <td>@item.facilityName</td>
+                <td>@item.inv.StockCount</td>
+                <td>@item.inv.MaxStockLevel</td>
+                <td>@item.inv.ReorderLevel</td>
+                <td>
+                    <a href="/Admin/Inventory/@item.inv.Id" class="btn btn-sm btn-warning">Edit</a>
+                    <form method="post" asp-page-handler="Delete" asp-route-id="@item.inv.Id"
+                          onsubmit="return confirm('Delete @item.itemName?')">
+                        <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </table>
 </div>

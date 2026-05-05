@@ -1,10 +1,10 @@
-﻿@page
+﻿@page "{Id?}"
 @model ImperialIMS.Pages.Admin.StorageFacilityModel
 @{
 }
 <div class="container">
     <h1>Create a new storage facility</h1>
-    <form id="form" method="post" onsubmit="handleSubmit()">
+    <form id="form" method="post" asp-page-handler="CreateOrUpdate" onsubmit="handleSubmit()">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         
         <div class="form-group">
@@ -22,4 +22,21 @@
         </div>
         <input type="hidden" asp-for="@Model.StorageFacility.Id" value="@Model.StorageFacility.Id" />
     </form>
+    <table class="table">
+        <tr><th>Name</th><th>Description</th><th>Actions</th></tr>
+        @foreach (var sf in Model.AllStorageFacilities)
+        {
+            <tr>
+                <td>@sf.Name</td>
+                <td>@sf.Location</td>
+                <td>
+                    <a href="/Admin/StorageFacility/@sf.Id" class="btn btn-sm btn-warning">Edit</a>
+                    <form method="post" asp-page-handler="Delete" asp-route-id="@sf.Id"
+                          onsubmit="return confirm('Delete @sf.Name?')">
+                        <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </table>
 </div>

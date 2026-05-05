@@ -17,7 +17,8 @@ namespace ImperialIMS.Pages.Admin
         [BindProperty]
         public ViewItem Item { get; set; }
         public Item NewItem { get; set; }
-        
+        public List<Item> AllItems { get; set; }
+
         public ItemModel(ItemService service, ILogger<ItemModel> log)
         {
             _service = service;
@@ -27,6 +28,7 @@ namespace ImperialIMS.Pages.Admin
         }
         public async Task<IActionResult> OnGetAsync(int? id)
         {
+            AllItems = _service.GetAll();
             try
             {
                 if (id != null)
@@ -43,7 +45,7 @@ namespace ImperialIMS.Pages.Admin
             }
             return Page();
         }
-        public async Task<IActionResult> OnPost()
+        public async Task<IActionResult> OnPostCreateOrUpdate()
         {
             try
             {
@@ -76,6 +78,11 @@ namespace ImperialIMS.Pages.Admin
                 _log.LogError("Error posting Discussion Thread." + ex.Message);
             }
             return LocalRedirect("/Search/" + NewItem.Name);
+        }
+        public IActionResult OnPostDelete(int id)
+        {
+            _service.Delete(id);
+            return RedirectToPage();
         }
     }
 }

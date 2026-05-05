@@ -14,6 +14,7 @@ namespace ImperialIMS.Pages.Admin
         [BindProperty]
         public ViewStorageFacility StorageFacility { get; set; }
         public StorageFacility NewStorageFacility { get; set; }
+        public List<StorageFacility> AllStorageFacilities { get; set; }
 
         public StorageFacilityModel(StorageFacilityService service, ILogger<StorageFacilityModel> log)
         {
@@ -24,6 +25,7 @@ namespace ImperialIMS.Pages.Admin
         }
         public async Task<IActionResult> OnGetAsync(int? id)
         {
+            AllStorageFacilities = _service.GetAll();
             try
             {
                 if (id != null)
@@ -40,7 +42,7 @@ namespace ImperialIMS.Pages.Admin
             }
             return Page();
         }
-        public async Task<IActionResult> OnPost()
+        public async Task<IActionResult> OnPostCreateOrUpdate()
         {
             try
             {
@@ -73,6 +75,11 @@ namespace ImperialIMS.Pages.Admin
                 _log.LogError("Error posting Discussion Thread." + ex.Message);
             }
             return LocalRedirect("/Search/" + NewStorageFacility.Name);
+        }
+        public IActionResult OnPostDelete(int id)
+        {
+            _service.Delete(id);
+            return RedirectToPage();
         }
     }
 }
