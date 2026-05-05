@@ -16,6 +16,7 @@ namespace ImperialIMS.Data
         public DbSet<Manifest> Manifests { get; set; }
         public DbSet<Shipment> Shipments { get; set; }
         public DbSet<StorageFacility> StorageFacilities { get; set; }
+        public DbSet<InventoryHistory> InventoryHistory { get; set; }
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options, IConfiguration config) : base(options)
         {
             _config = config;

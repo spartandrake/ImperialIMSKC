@@ -1,0 +1,64 @@
+﻿@page
+@model ImperialIMS.Pages.Admin.Reports.InventoryChangesModel
+@{
+}
+<div class="container">
+    <h1>Inventory Changes Report</h1>
+    <form method="get">
+        <div class="mb-3">
+            <label>Select a storage facility:</label>
+            <select asp-for="SelectedFacilityId" class="form-select" onchange="this.form.submit()">
+                <option value="">-- Select Storage Facility --</option>
+                @foreach (var facility in Model.StorageFacilities)
+                {
+                    <option value="@facility.Id">@facility.Name</option>
+                }
+            </select>
+        </div>
+    </form>
+
+    @if (Model.SelectedFacilityId.HasValue && !Model.ItemsWithHistory.Any())
+    {
+        <p>No inventory items found for this facility.</p>
+    }
+
+    @foreach (var entry in Model.ItemsWithHistory)
+    {
+        <div class="card mb-4">
+            <div class="card-header">
+                <strong>@entry.ItemName</strong>
+                — Current Stock: @entry.InventoryItem.StockCount
+                | Max: @entry.InventoryItem.MaxStockLevel
+                | Reorder At: @entry.InventoryItem.ReorderLevel
+            </div>
+            <div class="card-body">
+                @if (!entry.History.Any())
+                {
+                    <p class="text-muted">No history records.</p>
+                }
+                else
+                {
+                    <table class="table table-sm">
+                        <tr>
+                            <th>Date</th>
+                            <th>Old Stock</th>
+                            <th>New Stock</th>
+                            <th>Change</th>
+                            <th>Reason</th>
+                        </tr>
+                        @foreach (var h in entry.History)
+                        {
+                            <tr>
+                                <td>@h.ChangedAt.ToString("yyyy-MM-dd HH:mm")</td>
+                                <td>@h.OldStock</td>
+                                <td>@h.NewStock</td>
+                                <td>@(h.NewStock - h.OldStock)</td>
+                                <td>@h.ChangeReason</td>
+                            </tr>
+                        }
+                    </table>
+                }
+            </div>
+        </div>
+    }
+</div>

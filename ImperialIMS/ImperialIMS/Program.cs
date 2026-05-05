@@ -64,6 +64,7 @@ builder.Services.AddScoped<IRepo<ItemCategory>, ItemCategoryRepo>();
 builder.Services.AddScoped<IRepo<Manifest>, ManifestRepo>();
 builder.Services.AddScoped<IRepo<Shipment>, ShipmentRepo>();
 builder.Services.AddScoped<IRepo<StorageFacility>, StorageFacilityRepo>();
+builder.Services.AddScoped<IRepo<InventoryHistory>, InventoryHistoryRepo>();
 
 builder.Services.AddScoped<AlertService>();
 builder.Services.AddScoped<ApplicationUserService>();

@@ -7,12 +7,14 @@ namespace ImperialIMS.Services
     {
         private readonly ILogger<InventoryItem> _logger;
         private readonly IRepo<InventoryItem> _repo;
+        private readonly IRepo<InventoryHistory> _history;
         private IConfiguration _configuration { get; set; }
         private InventoryItem _item { get; set; }
         private List<InventoryItem> _items { get; set; }
-        public InventoryItemService(IRepo<InventoryItem> repo, IConfiguration configuration, ILogger<InventoryItem> logger) : base(repo, configuration, logger)
+        public InventoryItemService(IRepo<InventoryItem> repo, IRepo<InventoryHistory> history, IConfiguration configuration, ILogger<InventoryItem> logger) : base(repo, configuration, logger)
         {
             _repo = repo;
+            _history = history;
             _logger = logger;
             _configuration = configuration;
         }
@@ -24,6 +26,7 @@ namespace ImperialIMS.Services
                 _logger.LogWarning("Attempted to update stock for InventoryItem with ID {ItemId}, but it was not found.", itemId);
                 return;
             }
+            int oldStockCount = item.StockCount;
             if (isIncrement)
             {
                 IncrementStock(item, quantity);
@@ -33,6 +36,19 @@ namespace ImperialIMS.Services
                 DecrementStock(item, quantity);
             }
             _repo.Update(item);
+            if(oldStockCount != item.StockCount)
+            {
+                var historyRecord = new InventoryHistory
+                {
+                    InventoryItemId = item.Id,
+                    OldStock = oldStockCount,
+                    NewStock = item.StockCount,
+                    ChangeReason = isIncrement ? "Increment" : "Decrement",
+                    ChangedAt = DateTime.UtcNow
+                };
+                _history.Add(historyRecord);
+                _logger.LogInformation("Recorded inventory history for {ItemName}: change of {ChangeAmount} on {ChangeDate}.", item.Item.Name, historyRecord.ChangeAmount, historyRecord.ChangeDate);
+            }
         }
         private void DecrementStock(InventoryItem item, int quantity)
         {
