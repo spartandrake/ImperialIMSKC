@@ -9,7 +9,7 @@ using Serilog;
 
 namespace ImperialIMS.Pages.Admin
 {
-    //[Authorize(Policy = "AdminOnly")]
+    [Authorize(Policy = "AdminOnly")]
     public class InventoryModel : PageModel
     {
         public List<StorageFacility> StorageFacilities { get; set; } = new List<StorageFacility>();

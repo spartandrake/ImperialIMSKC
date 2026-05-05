@@ -16,6 +16,24 @@ namespace ImperialIMS.Services
             _logger = logger;
             _configuration = configuration;
         }
+        public void UpdateStock(int itemId, int quantity, bool isIncrement)
+        {
+            var item = _repo.Find(itemId);
+            if (item == null)
+            {
+                _logger.LogWarning("Attempted to update stock for InventoryItem with ID {ItemId}, but it was not found.", itemId);
+                return;
+            }
+            if (isIncrement)
+            {
+                IncrementStock(item, quantity);
+            }
+            else
+            {
+                DecrementStock(item, quantity);
+            }
+            _repo.Update(item);
+        }
         private void DecrementStock(InventoryItem item, int quantity)
         {
             if (quantity <= 0)

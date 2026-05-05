@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace ImperialIMS.Pages.Admin
 {
-    //[Authorize(Policy = "AdminOnly")]
+    [Authorize(Policy = "AdminOnly")]
     public class UsersModel : PageModel
     {
         private readonly ILogger<UsersModel> _logger;

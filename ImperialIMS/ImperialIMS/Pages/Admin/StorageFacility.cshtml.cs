@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace ImperialIMS.Pages.Admin
 {
-    //[Authorize(Policy = "AdminOnly")]
+    [Authorize(Policy = "AdminOnly")]
     public class StorageFacilityModel : PageModel
     {
         private StorageFacilityService _service { get; set; }

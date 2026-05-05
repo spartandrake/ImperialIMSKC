@@ -35,6 +35,7 @@ namespace ImperialIMS.Pages.Shipments
         public IActionResult OnPostConfirmShipment(int ShipmentId)
         {
             _shipmentService.MarkShipmentAsInTransit(ShipmentId, _trackingIdGenerator.Next());
+            _shipmentService.UpdateInventory(ShipmentId);
             return RedirectToPage("/Shipments");
         }
 

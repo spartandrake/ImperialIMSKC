@@ -7,12 +7,16 @@ namespace ImperialIMS.Services
     {
         private readonly ILogger<Shipment> _logger;
         private readonly IRepo<Shipment> _repo;
+        private readonly ManifestService manifestService;
+        private readonly InventoryItemService inventoryService;
         private IConfiguration _configuration { get; set; }
-        public ShipmentService(Repos.IRepo<Shipment> repo, IConfiguration configuration, ILogger<Shipment> logger) : base(repo, configuration, logger)
+        public ShipmentService(Repos.IRepo<Shipment> repo, IConfiguration configuration, ILogger<Shipment> logger, ManifestService manifestService, InventoryItemService inventoryService) : base(repo, configuration, logger)
         {
             _repo = repo;
             _configuration = configuration;
             _logger = logger;
+            this.manifestService = manifestService;
+            this.inventoryService = inventoryService;
         }
         public List<Shipment> GetAllForUser(string userid)
         {
@@ -21,11 +25,11 @@ namespace ImperialIMS.Services
         public Shipment CreateShipmentForUser(string userId)
         {
             //need to verify that there is no pending shipment for this user before we create a new one
-            
+
             var shipment = _repo.Search()
                 .Where(s => s.ApplicationUserId == userId && s.Status == ShippingStatus.Pending)
                 .FirstOrDefault();
-            if (shipment != null) 
+            if (shipment != null)
             {
                 return shipment;
             }
@@ -96,6 +100,16 @@ namespace ImperialIMS.Services
             _repo.SaveChanges();
             _logger.LogInformation("Marked shipment with Id {ShipmentId} as lost.", shipmentId);
             //We need to escalate this to the sector commander
+        }
+        public void UpdateInventory(int shipmentId)
+        {
+            //This method will be called when a shipment is marked as in transit. It will update the inventory levels for the items in the shipment.
+            //We need to get the manifest for the shipment and then update the inventory levels for each item in the manifest.
+            var manifests = manifestService.GetAllForShipment(shipmentId);
+            foreach (var manifest in manifests)
+            {
+                inventoryService.UpdateStock(manifest.InventoryItemId, manifest.amount, false);
+            }
         }
     }
 }
