@@ -93,6 +93,7 @@ using (var scope = app.Services.CreateScope())
         IConfiguration configuration = serviceProvider.GetRequiredService<IConfiguration>();
 
         await ApplicationUserSeedData.SeedAdminUserAsync(userManager, configuration);
+        await ApplicationUserSeedData.SeedTestUsersAsync(userManager);
         await SeedData.SeedAsync(dbContext);
     }
     catch (Exception ex)
@@ -112,11 +113,12 @@ if (app.Environment.IsDevelopment())
 else
 {
     app.UseExceptionHandler("/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-    app.UseHsts();
 }
 
-app.UseHttpsRedirection();
+if (app.Environment.IsDevelopment())
+{
+    app.UseHttpsRedirection();
+}
 
 app.UseRouting();
 app.UseAuthentication();

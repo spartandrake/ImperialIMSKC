@@ -30,11 +30,8 @@
                 <li class="nav-item">
                     <a class="nav-link text-light" asp-area="" asp-page="/Search">Search</a>
                 </li>
-                <li class="navbar-collapse collapse">
-                    <a class="nav-link text-light" asp-area="" asp-page="/Shipments">Shipments</a>
-                </li>
-                <li class="navbar-collapse collapse">
-                    <a class="nav-link text-light" asp-area="" asp-page="/Account">Account</a>
+                <li class="nav-item">
+                    <a class="nav-link text-light" asp-area="" asp-page="/Shipments/Details">Shipments</a>
                 </li>
                 @if ((await AuthorizationService.AuthorizeAsync(User, "AdminOnly")).Succeeded)
                 {
@@ -63,8 +60,6 @@
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="reportsDropdown">
                                 <li><a class="nav-link text-dark" asp-area="" asp-page="/Admin/Reports/InventoryChanges">Inventory Changes</a></li>
-                                @*<li><a class="nav-link text-dark" asp-area="" asp-page="/Admin/Reports/ShipmentHistory">Shipment History</a></li>
-                                <li><a class="nav-link text-dark" asp-area="" asp-page="/Admin/Reports/UserActivity">User Activity</a></li>*@
                             </ul>
                         </div>
                     </li>

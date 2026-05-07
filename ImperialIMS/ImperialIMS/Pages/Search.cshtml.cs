@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace ImperialIMS.Pages
 {
+    [Authorize]
     public class SearchModel : PageModel
     {
         private readonly InventoryItemService _inventoryItemService;

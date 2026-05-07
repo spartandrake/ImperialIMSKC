@@ -30,8 +30,48 @@ build_property._RazorSourceGeneratorDebug =
 build_property.EffectiveAnalysisLevelStyle = 10.0
 build_property.EnableCodeStyleSeverity = 
 
+[C:/Users/smart/source/repos/ImperialIMSKC/ImperialIMS/ImperialIMS/Areas/Identity/Pages/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/smart/source/repos/ImperialIMSKC/ImperialIMS/ImperialIMS/Areas/Identity/Pages/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/smart/source/repos/ImperialIMSKC/ImperialIMS/ImperialIMS/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/smart/source/repos/ImperialIMSKC/ImperialIMS/ImperialIMS/Areas/Identity/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/smart/source/repos/ImperialIMSKC/ImperialIMS/ImperialIMS/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/smart/source/repos/ImperialIMSKC/ImperialIMS/ImperialIMS/Pages/Admin/Inventory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cSW52ZW50b3J5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/smart/source/repos/ImperialIMSKC/ImperialIMS/ImperialIMS/Pages/Admin/Item.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cSXRlbS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/smart/source/repos/ImperialIMSKC/ImperialIMS/ImperialIMS/Pages/Admin/RecycleBin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cUmVjeWNsZUJpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/smart/source/repos/ImperialIMSKC/ImperialIMS/ImperialIMS/Pages/Admin/Reports/InventoryChanges.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cUmVwb3J0c1xJbnZlbnRvcnlDaGFuZ2VzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/smart/source/repos/ImperialIMSKC/ImperialIMS/ImperialIMS/Pages/Admin/StorageFacility.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cU3RvcmFnZUZhY2lsaXR5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/smart/source/repos/ImperialIMSKC/ImperialIMS/ImperialIMS/Pages/Admin/Users.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cVXNlcnMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/smart/source/repos/ImperialIMSKC/ImperialIMS/ImperialIMS/Pages/Error.cshtml]
@@ -42,8 +82,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/smart/source/repos/ImperialIMSKC/ImperialIMS/ImperialIMS/Pages/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
+[C:/Users/smart/source/repos/ImperialIMSKC/ImperialIMS/ImperialIMS/Pages/Search.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2VhcmNoLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/smart/source/repos/ImperialIMSKC/ImperialIMS/ImperialIMS/Pages/Shared/_LoginPartial.cshtml]
@@ -52,6 +92,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/smart/source/repos/ImperialIMSKC/ImperialIMS/ImperialIMS/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/smart/source/repos/ImperialIMSKC/ImperialIMS/ImperialIMS/Pages/Shipments/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hpcG1lbnRzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/smart/source/repos/ImperialIMSKC/ImperialIMS/ImperialIMS/Pages/_ViewImports.cshtml]

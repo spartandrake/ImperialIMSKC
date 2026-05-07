@@ -346,3 +346,4 @@ C:\Users\smart\source\repos\ImperialIMSKC\ImperialIMS\ImperialIMS\bin\Debug\net1
 C:\Users\smart\source\repos\ImperialIMSKC\ImperialIMS\ImperialIMS\bin\Debug\net10.0\System.Web.WebPages.dll
 C:\Users\smart\source\repos\ImperialIMSKC\ImperialIMS\ImperialIMS\bin\Debug\net10.0\Microsoft.Web.Infrastructure.dll
 C:\Users\smart\source\repos\ImperialIMSKC\ImperialIMS\ImperialIMS\obj\Debug\net10.0\compressed\eo78c4mjl1-{0}-77wwhia70t-77wwhia70t.gz
+C:\Users\smart\source\repos\ImperialIMSKC\ImperialIMS\ImperialIMS\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt

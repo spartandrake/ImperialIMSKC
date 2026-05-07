@@ -1,4 +1,8 @@
 <Solution>
+  <Project Path="docker-compose.dcproj">
+    <Build />
+  </Project>
   <Project Path="ImperialIMS.Tests/ImperialIMS.Tests.csproj" Id="e7566d6e-6ea1-4658-ae6c-0cca3dc51b0c" />
   <Project Path="ImperialIMS/ImperialIMS.csproj" />
+  <Project Path="IMS.UITests/IMS.UITests.csproj" Id="e3e49232-7ca3-42ab-a6d1-30dff375ad2b" />
 </Solution>
