@@ -73,25 +73,25 @@ namespace ImperialIMS.Services
                     ChangedAt = DateTime.UtcNow
                 };
                 _history.Add(historyRecord);
-                _logger.LogInformation("Recorded inventory history for {ItemName}: change of {ChangeAmount} on {ChangeDate}.", item.Item.Name, historyRecord.NewStock - historyRecord.OldStock,  historyRecord.ChangedAt);
+                _logger.LogInformation("Recorded inventory history for {ItemName}: change of {ChangeAmount} on {ChangeDate}.", item.Id, historyRecord.NewStock - historyRecord.OldStock,  historyRecord.ChangedAt);
             }
         }
         private void DecrementStock(InventoryItem item, int quantity)
         {
             if (quantity <= 0)
             {
-                _logger.LogWarning("Attempted to decrement stock for {ItemName} by a non-positive quantity: {Quantity}.", item.Item.Name, quantity);
+                _logger.LogWarning("Attempted to decrement stock for {ItemName} by a non-positive quantity: {Quantity}.", item.Id, quantity);
                 return;
             }
             else if (quantity > item.StockCount)
             {
-                _logger.LogWarning("Attempted to decrement stock for {ItemName} by {Quantity}, but only {AvailableQuantity} available.", item.Item.Name, quantity, item.StockCount);
+                _logger.LogWarning("Attempted to decrement stock for {ItemName} by {Quantity}, but only {AvailableQuantity} available.", item.Id, quantity, item.StockCount);
                 return;
             }
             else
             {
                 item.StockCount -= quantity;
-                _logger.LogInformation("Decremented stock for {ItemName} by {Quantity}. New stock count: {NewStockCount}.", item.Item.Name, quantity, item.StockCount);
+                _logger.LogInformation("Decremented stock for {ItemName} by {Quantity}. New stock count: {NewStockCount}.", item.Id, quantity, item.StockCount);
             }
             if (item.ReorderLevel <= item.StockCount)
             {
@@ -100,25 +100,25 @@ namespace ImperialIMS.Services
             }
             else
             {
-                _logger.LogWarning("Attempted to decrement stock for {ItemName} by {Quantity}, but only {AvailableQuantity} available.", item.Item.Name, quantity, item.StockCount);
+                _logger.LogWarning("Attempted to decrement stock for {ItemName} by {Quantity}, but only {AvailableQuantity} available.", item.Id, quantity, item.StockCount);
             }
         }
         private void IncrementStock(InventoryItem item, int quantity)
         {
             if (quantity <= 0)
             {
-                _logger.LogWarning("Attempted to increment stock for {ItemName} by a non-positive quantity: {Quantity}.", item.Item.Name, quantity);
+                _logger.LogWarning("Attempted to increment stock for {ItemName} by a non-positive quantity: {Quantity}.", item.Id, quantity);
                 return;
             }
             else
             {
                 item.StockCount += quantity;
-                _logger.LogInformation("Incremented stock for {ItemName} by {Quantity}. New stock count: {NewStockCount}.", item.Item.Name, quantity, item.StockCount);
+                _logger.LogInformation("Incremented stock for {ItemName} by {Quantity}. New stock count: {NewStockCount}.", item.Id, quantity, item.StockCount);
             }
             if (item.StockCount >= item.MaxStockLevel)
             {
                 //create alert for overstock
-                _logger.LogWarning("Stock for {ItemName} has reached or exceeded the maximum stock level of {MaxStockLevel}. Current stock count: {CurrentStockCount}.", item.Item.Name, item.MaxStockLevel, item.StockCount);
+                _logger.LogWarning("Stock for {ItemName} has reached or exceeded the maximum stock level of {MaxStockLevel}. Current stock count: {CurrentStockCount}.", item.Id, item.MaxStockLevel, item.StockCount);
             }
         }
     }

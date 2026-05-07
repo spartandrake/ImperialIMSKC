@@ -1,0 +1,14 @@
+﻿@page
+@using ImperialIMS.Models
+@model ImperialIMS.Pages.ShipmentsModel
+@{
+}
+
+@foreach (var shipment in Model.userShipments)
+{
+    <div class="shipment dr">
+        <h3>Shipment #@shipment.Id</h3>
+        <p>Status: @shipment.Status</p>
+        <a asp-page="/Shipments/Details" asp-route-ShipmentId="@shipment.Id" class="btn btn-primary">View Details</a>
+    </div>
+}

@@ -31,7 +31,7 @@
                     <a class="nav-link text-light" asp-area="" asp-page="/Search">Search</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-light" asp-area="" asp-page="/Shipments/Details">Shipments</a>
+                    <a class="nav-link text-light" asp-area="" asp-page="/Shipments">Shipments</a>
                 </li>
                 @if ((await AuthorizationService.AuthorizeAsync(User, "AdminOnly")).Succeeded)
                 {
