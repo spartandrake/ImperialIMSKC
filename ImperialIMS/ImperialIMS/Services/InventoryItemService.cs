@@ -1,5 +1,6 @@
 ﻿using ImperialIMS.Models;
 using ImperialIMS.Repos;
+using Microsoft.EntityFrameworkCore;
 
 namespace ImperialIMS.Services
 {
@@ -22,15 +23,18 @@ namespace ImperialIMS.Services
         {
             try
             {
-                var old = _repo.Find(value.Id);
-                if (old.StockCount != value.StockCount)
+                var oldStock = _repo.Search(x => x.Id == value.Id)
+                    .AsNoTracking()
+                    .Select(x => x.StockCount)
+                    .FirstOrDefault();
+                if (oldStock != value.StockCount)
                 {
                     var historyRecord = new InventoryHistory
                     {
                         InventoryItemId = value.Id,
-                        OldStock = old.StockCount,
+                        OldStock = oldStock,
                         NewStock = value.StockCount,
-                        ChangeReason = value.StockCount > old.StockCount ? "Increment" : "Decrement",
+                        ChangeReason = value.StockCount > oldStock ? "Increment" : "Decrement",
                         ChangedAt = DateTime.UtcNow
                     };
                     _history.Add(historyRecord);

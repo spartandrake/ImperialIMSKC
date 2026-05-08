@@ -19,9 +19,9 @@ namespace ImperialIMS.Pages.Admin.Reports
         public int? SelectedFacilityId { get; set; }
 
         [BindProperty(SupportsGet = true)] 
-        public DateTime? From { get; set; }
+        public DateTime? From { get; set; } = DateTime.Now;
         [BindProperty(SupportsGet = true)] 
-        public DateTime? To { get; set; }
+        public DateTime? To { get; set; } = DateTime.Now;
 
         public InventoryChangesModel(ReportService reportService, StorageFacilityService facilityService)
         {

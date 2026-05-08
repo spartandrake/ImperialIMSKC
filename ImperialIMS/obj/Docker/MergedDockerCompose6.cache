@@ -1,0 +1,74 @@
+name: dockercompose7532489348338941099
+services:
+  imperialims:
+    build:
+      context: C:\Users\smart\source\repos\ImperialIMSKC\ImperialIMS
+      dockerfile: Dockerfile
+    container_name: aspnet-sqlite-app
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTP_PORTS: "8080"
+      ASPNETCORE_HTTPS_PORTS: "8081"
+      ASPNETCORE_URLS: http://+:8080
+      ConnectionStrings__DefaultConnection: Data Source=/Data/app.db;Cache=Shared
+    expose:
+      - "8080"
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 8080
+        protocol: tcp
+      - mode: ingress
+        target: 8081
+        protocol: tcp
+    restart: unless-stopped
+    volumes:
+      - type: bind
+        source: C:\Users\smart\source\repos\ImperialIMSKC\ImperialIMS\ImperialIMS\Data
+        target: /Data
+        bind: {}
+      - type: bind
+        source: C:\Users\smart\AppData\Roaming/Microsoft/UserSecrets
+        target: /home/app/.microsoft/usersecrets
+        read_only: true
+        bind: {}
+      - type: bind
+        source: C:\Users\smart\AppData\Roaming/Microsoft/UserSecrets
+        target: /root/.microsoft/usersecrets
+        read_only: true
+        bind: {}
+      - type: bind
+        source: C:\Users\smart\AppData\Roaming/ASP.NET/Https
+        target: /home/app/.aspnet/https
+        read_only: true
+        bind: {}
+      - type: bind
+        source: C:\Users\smart\AppData\Roaming/ASP.NET/Https
+        target: /root/.aspnet/https
+        read_only: true
+        bind: {}
+  nginx:
+    container_name: nginx-reverse-proxy
+    depends_on:
+      imperialims:
+        condition: service_started
+        required: true
+    image: nginx:alpine
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 80
+        published: "80"
+        protocol: tcp
+    restart: unless-stopped
+    volumes:
+      - type: bind
+        source: C:\Users\smart\source\repos\ImperialIMSKC\ImperialIMS\nginx.conf
+        target: /etc/nginx/nginx.conf
+        read_only: true
+        bind: {}
+networks:
+  default:
+    name: dockercompose7532489348338941099_default

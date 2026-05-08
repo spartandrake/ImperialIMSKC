@@ -40,7 +40,7 @@ namespace ImperialIMS.Services
             {
                 InventoryItem = item,
                 ItemName = _itemRepo.Find(item.ItemId).Name,
-                History = _inventoryHistoryRepo.Search(ih => ih.InventoryItemId == item.Id && ih.ChangedAt >= from && ih.ChangedAt <= to)
+                History = _inventoryHistoryRepo.Search(ih => ih.InventoryItemId == item.Id && ih.ChangedAt >= from && ih.ChangedAt < to.AddDays(1))
                 .OrderByDescending(ih => ih.ChangedAt).ToList()
             }).ToList();
         }

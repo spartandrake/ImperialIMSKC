@@ -5,16 +5,28 @@
 <div class="container">
     <h1>Inventory Changes Report</h1>
     <form method="get">
-        <div class="mb-3">
-            <label>Select a storage facility:</label>
-            <select asp-for="SelectedFacilityId" class="form-select" onchange="this.form.submit()">
-                <option value="">-- Select Storage Facility --</option>
-                @foreach (var facility in Model.StorageFacilities)
-                {
-                    <option value="@facility.Id">@facility.Name</option>
-                }
-            </select>
-        </div>
+        <div class="row g-3 align-items-end mb-3">
+            <div class="col-md-4">
+                <label class="form-label">Storage Facility</label>
+                <select asp-for="SelectedFacilityId" class="form-select">
+                    <option value="">-- Select Storage Facility --</option>
+                    @foreach (var facility in Model.StorageFacilities)
+                    {
+                        <option value="@facility.Id">@facility.Name</option>
+                    }
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label asp-for="From" class="form-label">From</label>
+                <input asp-for="From" type="date" class="form-control" />
+            </div>
+            <div class="col-md-3">
+                <label asp-for="To" class="form-label">To</label>
+                <input asp-for="To" type="date" class="form-control" />
+            </div>
+            <div class="col-md-2">
+                <button type="submit" class="btn btn-primary w-100">Generate Report</button>
+            </div>
     </form>
 
     @if (Model.SelectedFacilityId.HasValue && !Model.ItemsWithHistory.Any())
